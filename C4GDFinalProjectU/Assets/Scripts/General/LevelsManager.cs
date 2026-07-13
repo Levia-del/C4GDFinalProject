@@ -11,7 +11,7 @@ public class LevelsManager : MonoBehaviour
 
     public int currLvl = -1;
     public int nextLvl;
-    private int levelNmbr = 0;
+    public int levelNmbr = 0;
     // Start is called before the first frame update
     void Start()
     {
