@@ -17,7 +17,8 @@ public class DodgeCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int lvl = LevelsManager.instance.levelNmbr;
+        // int lvl = LevelsManager.instance.levelNmbr;
+        int lvl = 10;
         if(lvl<3)
         {
             spawnDelay = 1.2f;
@@ -26,13 +27,13 @@ public class DodgeCanvas : MonoBehaviour
         else if(lvl<6)
         {
             spawnDelay = 0.7f;
-            enemySpeed = 20f;
+            enemySpeed = 12f;
         }
         else
         {
-            spawnDelay = 0.4f;
+            spawnDelay = 0.5f;
             timeToSurvive = 20f;
-            enemySpeed = 40f;
+            enemySpeed = 14f;
         }
         InvokeRepeating("spawnProjectile", 0, spawnDelay);
     }
