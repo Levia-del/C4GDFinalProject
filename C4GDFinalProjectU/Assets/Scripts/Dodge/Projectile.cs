@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public float speed = 50f;
 
     private DodgeCanvas dc;
     // Start is called before the first frame update
@@ -15,7 +16,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector2.down * Time.deltaTime * speed);
     }
 
     void OnTriggerEnter2D(Collider2D coll)
