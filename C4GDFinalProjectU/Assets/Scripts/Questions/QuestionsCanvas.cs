@@ -14,15 +14,21 @@ public class QuestionsCanvas : MonoBehaviour
     public TMP_Text RTXT;
 
     private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
-    private string[] mediumQs = { };
-    private string[] hardQs = { };
+    private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?"};
+    private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?"};
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
         {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} },
         {"What game are we playing?", new string[]{"Family \nFeud","Help! \nISIAKG"} },
         {"What is your reward?", new string[]{"A Million \nDollars","More \nMinigames!"} },
-        {"How do you win?", new string[]{"You Don't","Survive \n10 Minigames"} }
+        {"How do you win?", new string[]{"You Don't","Survive \n10 Minigames"} },
+        {"What is the capital of Australia?", new string[]{"Sydney","Canberra"} },
+        {"What state am I from?", new string[]{"West \nVirginia","New \nJersey"} },
+        {"What do you love about me?", new string[]{"Mustache","Hair"} },
+        {"Why are you here?", new string[]{"To suffer.","To get \nthe rating up!"} },
+        {"Why.", new string[]{"...","...."} },
+        {"What is the meaning of life?", new string[]{"To live","to Live"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
@@ -30,7 +36,13 @@ public class QuestionsCanvas : MonoBehaviour
         {"Who is the best gameshow host?", false },
         {"What game are we playing?", true},
         {"What is your reward?", true},
-        {"How do you win?", false}
+        {"How do you win?", false},
+        {"What is the capital of Australia?", true},
+        {"What state am I from?", false},
+        {"What do you love about me?", false},
+        {"Why are you here?", true},
+        {"Why.", true},
+        {"What is the meaning of life?.", false}
         
     };
 
