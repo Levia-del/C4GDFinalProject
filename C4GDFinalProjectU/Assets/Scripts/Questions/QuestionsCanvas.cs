@@ -13,18 +13,25 @@ public class QuestionsCanvas : MonoBehaviour
     public TMP_Text LTXT;
     public TMP_Text RTXT;
 
-    private string[] easyQs = {"Who is the best gameshow host?"};
+    private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
     private string[] mediumQs = { };
     private string[] hardQs = { };
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
-        {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} }
+        {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} },
+        {"What game are we playing?", new string[]{"Family \nFeud","Help! \nISIAKG"} },
+        {"What is your reward?", new string[]{"A Million \nDollars","More \nMinigames!"} },
+        {"How do you win?", new string[]{"You Don't","Survive \n10 Minigames"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
     {
-        {"Who is the best gameshow host?", false }
+        {"Who is the best gameshow host?", false },
+        {"What game are we playing?", true},
+        {"What is your reward?", true},
+        {"How do you win?", false}
+        
     };
 
     private bool isRight = true;
