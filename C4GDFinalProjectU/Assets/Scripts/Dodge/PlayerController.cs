@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Snap(1);
+        transform.position = new Vector2(SnapToPoss[1].transform.position.x, SnapToPoss[1].transform.position.y);
     }
 
     // Update is called once per frame
@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
 
     void Snap(int index)
     {
-        transform.DOMove(new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y), 0.2f);
+        transform.DOScaleY(.5f, 0.1f);
+        transform.DOMove(new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y), 0.08f);
+        transform.DOScaleY(1f, .1f).WaitForCompletion();
     }
 
     void addInd()
