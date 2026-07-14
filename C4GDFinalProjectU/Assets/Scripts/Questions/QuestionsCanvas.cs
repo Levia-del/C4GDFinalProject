@@ -45,7 +45,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What do you love about me?", false},
         {"Why are you here?", true},
         {"Why.", true},
-        {"What is the meaning of life?.", false}
+        {"What is the meaning of life?", false}
         
     };
 
