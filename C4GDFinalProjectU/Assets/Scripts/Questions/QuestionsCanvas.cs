@@ -17,6 +17,8 @@ public class QuestionsCanvas : MonoBehaviour
     private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?"};
     private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?"};
 
+    private bool finished = false;
+
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
         {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} },
@@ -100,17 +102,21 @@ public class QuestionsCanvas : MonoBehaviour
 
     void answerProcess(bool condition)
     {
-        if (condition)
+        if(!finished)
         {
-            QTXT.text = "Correct!";
-            StartCoroutine(NxtLvl());
+            finished = true;
+            if (condition)
+            {
+                QTXT.text = "Correct!";
+                StartCoroutine(NxtLvl());
 
-        }
-        else
-        {
-            QTXT.text = "Nope. Death!";
-            MainGameUI.instance.health--;
-            StartCoroutine(NxtLvl());
+            }
+            else
+            {
+                QTXT.text = "Nope. Death!";
+                MainGameUI.instance.health--;
+                StartCoroutine(NxtLvl());
+            }
         }
     }
 
