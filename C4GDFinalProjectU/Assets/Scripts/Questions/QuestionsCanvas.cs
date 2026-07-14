@@ -63,7 +63,7 @@ public class QuestionsCanvas : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A)) 
         { answerProcess(!isRight); } 
-        else if (Input.GetKeyDown(KeyCode.A)) 
+        else if (Input.GetKeyDown(KeyCode.D)) 
         { answerProcess(isRight); }
     }
 
