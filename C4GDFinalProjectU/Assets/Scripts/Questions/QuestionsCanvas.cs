@@ -61,11 +61,11 @@ public class QuestionsCanvas : MonoBehaviour
         }
         else if(LvlManager.levelNmbr < 6)
         {
-            q = mediumQs[Random.Range(0, easyQs.Length)];
+            q = mediumQs[Random.Range(0, mediumQs.Length)];
         }
         else
         {
-            q = hardQs[Random.Range(0, easyQs.Length)];
+            q = hardQs[Random.Range(0, hardQs.Length)];
         }
 
         QTXT.text = q;
