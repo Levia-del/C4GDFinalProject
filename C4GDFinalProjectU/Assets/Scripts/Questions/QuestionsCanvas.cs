@@ -29,7 +29,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is the capital of Australia?", new string[]{"Sydney","Canberra"} },
         {"What state am I from?", new string[]{"West \nVirginia","New \nJersey"} },
         {"What do you love about me?", new string[]{"Mustache","Hair"} },
-        {"Why are you here?", new string[]{"To suffer.","To get \nthe rating up!"} },
+        {"Why are you here?", new string[]{"To suffer.", "To get the \nrating up!" } },
         {"Why.", new string[]{"...","...."} },
         {"What is the meaning of life?", new string[]{"To live","to Live"} }
     };
