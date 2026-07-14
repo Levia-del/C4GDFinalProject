@@ -29,9 +29,10 @@ public class QuestionsCanvas : MonoBehaviour
 
     private bool isRight = true;
     // Start is called before the first frame update
+
     void Start()
     {
-
+        
         string q = "";
         LvlManager = LevelsManager.instance;
 
@@ -52,11 +53,38 @@ public class QuestionsCanvas : MonoBehaviour
         LTXT.text = As[q][0];
         RTXT.text = As[q][1];
         isRight = BoolAs[q];
+
+        BTNL.onClick.AddListener(LBClicked);
+        BTNR.onClick.AddListener(RBClicked);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+  
+
+    void LBClicked()
+    {
+        answerProcess(!isRight);
+    }
+
+    void RBClicked()
+    {
+        answerProcess(isRight);
+    }
+
+    void answerProcess(bool condition)
+    {
+        if (condition)
+        {
+            QTXT.text = "Correct!";
+        }
+        else
+        {
+            QTXT.text = "Nope. Death!";
+        }
     }
 }
