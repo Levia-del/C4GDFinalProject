@@ -20,7 +20,7 @@
 
 - ✅ **Questions (Trivia Minigame)** — A two-choice trivia game. Selects a question from easy/medium/hard pools based on the current level number. The player chooses the left (A) or right (D) answer. A 5-second timer adds pressure; running out of time counts as a failure. Correct answers advance the level; wrong answers cost 1 health.
 - ✅ **Dodge (Survival Minigame)** — The player controls a character that snaps between 3 horizontal lanes (A = left, D = right). Projectiles fall from above with increasing speed and spawn rate across 3 difficulty tiers (levels 1–2, 3–5, 6+). Survive the timer to win. Colliding with a projectile costs 1 health.
-- ✅ **Button (Reaction Minigame)** — A simple reaction test. The text displays "Wait" for a random duration (3–15 seconds), then changes to "Go!". The player must press the button (or key) as quickly as possible after the signal. (Logic partially implemented; input handling to be added.)
+- ✅ **Button (Reaction Minigame)** — A reaction test minigame. The text displays "Wait" for a random duration (3–15 seconds) while the button is disabled. Once the timer expires, the text changes to "Go!" and the button becomes clickable with a pulsating scale animation (DOTween Yoyo loop) and a randomized color flash effect (vibrant colors cycling every 0.3s). The player has a limited reaction window (starts at 5s, decreases with level to 1s minimum) to click the button. Clicking in time shows "Got it!" and advances (effects stop). Missing the window shows "Too Slow!", costs 1 health, and advances (effects stop). Both paths use a 2-second coroutine delay before transitioning through the Transition scene. All visual effects are properly killed and reset on completion.
 
 ## 🎨 Visual & Effects
 

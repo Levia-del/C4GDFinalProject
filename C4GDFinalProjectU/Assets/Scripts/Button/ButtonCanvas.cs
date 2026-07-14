@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class ButtonCanvas : MonoBehaviour
 {
@@ -10,31 +11,159 @@ public class ButtonCanvas : MonoBehaviour
     public TMP_Text txt;
 
     private float waitTime;
+    private float reactionTime;
     private bool isGo = false;
+    private bool finished = false;
+
+    private Vector3 originalScale;
+    private Coroutine pulseCoroutine;
+    private Coroutine colorFlashCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         txt.text = "Wait";
+        btn.interactable = false;
+        btn.image.color = Color.white;
+        originalScale = btn.transform.localScale;
+
         // Random wait duration between 3 and 15 seconds
-        // (Unity's Random.Range uses an exclusive upper bound, so this
-        //  lands in [3, 15) — effectively "between 3 and 15").
         waitTime = Random.Range(3f, 15f);
+
+        // Wire up button click
+        btn.onClick.AddListener(OnButtonClicked);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (finished) return;
 
-        if (waitTime > 0)
+        if (!isGo)
         {
-            waitTime -= Time.deltaTime;
+            // Wait phase — counting down to "Go!"
+            if (waitTime > 0)
+            {
+                waitTime -= Time.deltaTime;
+            }
+            else
+            {
+                txt.text = "Go!";
+                btn.interactable = true;
+                isGo = true;
+                // Reaction window starts at 5s, decreases with level, minimum 1s
+                reactionTime = Mathf.Max(5f - LevelsManager.instance.levelNmbr, 1f);
+
+                // Start pulsating scale and color flash effects
+                StartVisualEffects();
+            }
         }
         else
         {
-            txt.text = "Go!";
-            isGo = true;
+            // Reaction phase — player must click before timer expires
+            if (reactionTime > 0)
+            {
+                reactionTime -= Time.deltaTime;
+            }
+            else
+            {
+                StopVisualEffects();
+                finished = true;
+                btn.interactable = false;
+                txt.text = "Too Slow!";
+                btn.image.color = Color.white;
+                MainGameUI.instance.health--;
+                StartCoroutine(AdvanceAfterDelay());
+            }
         }
+    }
+
+    void StartVisualEffects()
+    {
+        // Reset scale to baseline before starting pulse
+        btn.transform.localScale = originalScale;
+
+        // Pulsating scale using manual localScale with sine-wave oscillation
+        pulseCoroutine = StartCoroutine(PulseScale());
+
+        // Start randomized color flashing
+        colorFlashCoroutine = StartCoroutine(FlashColors());
+    }
+
+    void StopVisualEffects()
+    {
+        // Stop the pulse coroutine
+        if (pulseCoroutine != null)
+        {
+            StopCoroutine(pulseCoroutine);
+            pulseCoroutine = null;
+        }
+
+        // Stop the color flash coroutine
+        if (colorFlashCoroutine != null)
+        {
+            StopCoroutine(colorFlashCoroutine);
+            colorFlashCoroutine = null;
+        }
+
+        // Kill any remaining color tweens on the button image
+        btn.image.DOKill();
+
+        // Reset to default visual state
+        btn.transform.localScale = originalScale;
+        btn.image.color = Color.white;
+    }
+
+    IEnumerator PulseScale()
+    {
+        float minFactor = 1.0f;
+        float maxFactor = 1.5f;
+        float frequency = 2.5f; // full pulse cycles per second
+
+        while (true)
+        {
+            // Sine wave: goes from 0 → 1 → 0 smoothly
+            float t = (Mathf.Sin(Time.time * frequency * Mathf.PI * 2f) + 1f) * 0.5f;
+            float factor = Mathf.Lerp(minFactor, maxFactor, t);
+            btn.transform.localScale = new Vector3(
+                originalScale.x * factor,
+                originalScale.y * factor,
+                originalScale.z
+            );
+            yield return null;
+        }
+    }
+
+    IEnumerator FlashColors()
+    {
+        while (true)
+        {
+            // Pick a random vibrant color (avoiding extremes for readability)
+            Color randomColor = new Color(
+                Random.Range(0.2f, 1f),
+                Random.Range(0.2f, 1f),
+                Random.Range(0.2f, 1f)
+            );
+            btn.image.DOColor(randomColor, 0.3f).SetEase(Ease.OutQuad);
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    void OnButtonClicked()
+    {
+        if (!isGo || finished) return;
+
+        StopVisualEffects();
+        finished = true;
+        btn.interactable = false;
+        txt.text = "Got it!";
+        btn.image.color = Color.white;
+        StartCoroutine(AdvanceAfterDelay());
+    }
+
+    IEnumerator AdvanceAfterDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        LevelsManager.instance.LevelComplete(true);
     }
 }

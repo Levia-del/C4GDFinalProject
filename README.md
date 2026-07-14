@@ -17,7 +17,7 @@ A chaotic collection of rapid-fire mini-games built in Unity. Survive randomized
 ### Mini-Games
 - **Trivia (Questions)** — Two-choice trivia with three difficulty tiers (easy/medium/hard). Questions range from silly to existential. A 5-second timer adds pressure. Correct answers advance; wrong answers cost 1 HP.
 - **Dodge** — Survival mini-game where the player dodges falling projectiles across 3 lanes. Speed and spawn rate scale with level. Smooth DOTween lane-snapping with squash-and-stretch feedback.
-- **Button (Reaction Time)** — A randomized reaction test. Wait for the "Go!" signal (3–15 second delay) and react as fast as possible.
+- **Button (Reaction Time)** — A randomized reaction test. Wait for the "Go!" signal — the button is disabled until then. Once active, the button pulsates with a breathing scale animation and flashes random vibrant colors. You have a shrinking reaction window (5s → 1s minimum based on level) to click. Click in time for "Got it!"; miss for "Too Slow!" and a lost heart. Effects instantly stop on click or timeout.
 
 ### Screens
 - **Start Screen** — Title with a pulsing sine-wave animation and a start button.
