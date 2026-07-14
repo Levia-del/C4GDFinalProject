@@ -22,7 +22,7 @@ public class QuestionsCanvas : MonoBehaviour
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
-        {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} },
+        {"Who is the best gameshow host?", new string[]{"Steve \nHarvey","IDK"} },
         {"What game are we playing?", new string[]{"Family \nFeud","Help! \nISIAKG"} },
         {"What is your reward?", new string[]{"A Million \nDollars","More \nMinigames!"} },
         {"How do you win?", new string[]{"You Don't","Survive \n10 Minigames"} },
