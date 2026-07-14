@@ -30,7 +30,7 @@ public class TransitionCanvas : MonoBehaviour
             string mess="";
             if (LvlManager.nextLvl == 0)
             {
-                mess = "Answer correctly with A-D or die!";
+                mess = "Answer fast with A-D or die!";
             }
             else if (LvlManager.nextLvl == 1)
             {
