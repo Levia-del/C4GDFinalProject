@@ -58,11 +58,11 @@ public class QuestionsCanvas : MonoBehaviour
         string q = "";
         LvlManager = LevelsManager.instance;
 
-        if (LvlManager.levelNmbr < 6)
+        if (LvlManager.levelNmbr < 4)
         {
             q = easyQs[Random.Range(0, easyQs.Length)];
         }
-        else if(LvlManager.levelNmbr < 12)
+        else if(LvlManager.levelNmbr < 6)
         {
             q = mediumQs[Random.Range(0, mediumQs.Length)];
         }

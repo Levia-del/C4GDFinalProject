@@ -7,7 +7,7 @@ public class LevelsManager : MonoBehaviour
 {
     public static LevelsManager instance;
 
-    private string[] levels = {"Questions", "Dodge"};
+    private string[] levels = {"Questions", "Dodge", "Button"};
 
     public int currLvl = -1;
     public int nextLvl;
