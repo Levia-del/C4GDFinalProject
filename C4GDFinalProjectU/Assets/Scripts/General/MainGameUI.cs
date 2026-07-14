@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MainGameUI : MonoBehaviour
@@ -41,14 +42,23 @@ public class MainGameUI : MonoBehaviour
 
     public void newLevel()
     {
-        for (int i = 0; i < hearts.Length; i++)
+        if(health<1)
         {
-            hearts[i].SetActive(false);
+            SceneManager.LoadScene("DeathScreen");
         }
-        for (int i = 0; i < health; i++)
+        else
         {
-            hearts[i].SetActive(true);
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                hearts[i].SetActive(false);
+            }
+            for (int i = 0; i < health; i++)
+            {
+                hearts[i].SetActive(true);
+            }
         }
+        
+
     }
 
     public void setNLTXT(string txt)
