@@ -21,6 +21,6 @@ public class DeathCanvas : MonoBehaviour
 
     void Restart()
     {
-
+        SceneManager.LoadScene("StartScreen");
     }
 }
