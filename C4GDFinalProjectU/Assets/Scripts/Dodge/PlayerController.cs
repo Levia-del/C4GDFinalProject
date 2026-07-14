@@ -36,13 +36,13 @@ bool isMoving = false;
     IEnumerator Snap(int index)
     {
         isMoving = true;
-        transform.DOScaleY(.5f, .1f);
-        yield return new WaitForSeconds(.1f);
+        transform.DOScaleY(.5f, .001f);
+        yield return new WaitForSeconds(.001f);
         transform.DOMove(new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y), 0.08f);
-        yield return new WaitForSeconds(.1f);
-        transform.DOScaleY(1f, .1f);
-        transform.DOPunchPosition(Vector3.up, .1f);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.08f);
+        transform.DOScaleY(1f, .08f);
+        // transform.DOPunchPosition(Vector3.up, .1f);
+        yield return new WaitForSeconds(.08f);
         isMoving = false;
     }
 

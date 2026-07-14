@@ -742,6 +742,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8216658039726976629, guid: f1748619aec39491f8875b322c98d238, type: 3}
+    - target: {fileID: 1521757906505812336, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316679094472365193, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3870636331234010462, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -834,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8216658039726976629, guid: f1748619aec39491f8875b322c98d238, type: 3}
+    - target: {fileID: 8750481001395560201, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1133,7 +1145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492982083}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -1142,7 +1154,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 245ea7882717e4bd7975c36ea7e9d032, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 8064219e39eda0e41ae554d0e6635f23, type: 2}
 --- !u!4 &1492982085
 Transform:
   m_ObjectHideFlags: 0
