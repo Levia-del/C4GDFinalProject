@@ -61,7 +61,10 @@ public class QuestionsCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A)) 
+        { answerProcess(!isRight); } 
+        else if (Input.GetKeyDown(KeyCode.A)) 
+        { answerProcess(isRight); }
     }
 
   

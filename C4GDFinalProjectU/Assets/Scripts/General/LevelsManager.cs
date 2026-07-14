@@ -56,10 +56,11 @@ public class LevelsManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(levels[currLvl]);
+            SceneManager.LoadScene(levels[nextLvl]);
             currLvl = nextLvl;
             nextLvl = generateRadnLvl();
             levelNmbr++;
+            MainGameUI.instance.setNLTXT("Next level is: "+levels[nextLvl]);
         }
         
     }

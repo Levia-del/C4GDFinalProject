@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainGameUI : MonoBehaviour
 {
     public static MainGameUI instance;
     public GameObject[] hearts;
     public int health = 3;
+    public TMP_Text NLTXT;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +49,10 @@ public class MainGameUI : MonoBehaviour
         {
             hearts[i].SetActive(true);
         }
+    }
+
+    public void setNLTXT(string txt)
+    {
+        NLTXT.text = txt;
     }
 }

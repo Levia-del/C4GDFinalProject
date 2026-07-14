@@ -28,11 +28,11 @@ public class TransitionCanvas : MonoBehaviour
         else
         {
             string mess="";
-            if (LvlManager.currLvl == 0)
+            if (LvlManager.nextLvl == 0)
             {
                 mess = "Answer correctly with A-D or die!";
             }
-            else if (LvlManager.currLvl == 1)
+            else if (LvlManager.nextLvl == 1)
             {
                 mess = "Dodge with A-D or die!";
             }
