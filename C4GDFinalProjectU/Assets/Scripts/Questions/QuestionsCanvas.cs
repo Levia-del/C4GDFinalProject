@@ -81,10 +81,20 @@ public class QuestionsCanvas : MonoBehaviour
         if (condition)
         {
             QTXT.text = "Correct!";
+            StartCoroutine(NxtLvl());
+
         }
         else
         {
             QTXT.text = "Nope. Death!";
+            MainGameUI.instance.health--;
+            StartCoroutine(NxtLvl());
         }
+    }
+
+    IEnumerator NxtLvl()
+    {
+        yield return new WaitForSeconds(2f);
+        LvlManager.LevelComplete(true);
     }
 }

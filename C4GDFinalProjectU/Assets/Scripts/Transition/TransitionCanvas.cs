@@ -47,7 +47,7 @@ public class TransitionCanvas : MonoBehaviour
             }
             else
             {
-                LvlManager.LevelComplete();
+                LvlManager.LevelComplete(false);
             }
         }
     }

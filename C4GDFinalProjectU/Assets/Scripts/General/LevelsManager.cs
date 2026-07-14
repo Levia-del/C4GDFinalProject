@@ -47,11 +47,20 @@ public class LevelsManager : MonoBehaviour
         return lvl;
     }
 
-    public void LevelComplete()
+    public void LevelComplete(bool isTransition)
     {
-        SceneManager.LoadScene(levels[currLvl]);
-        currLvl = nextLvl;
-        nextLvl = generateRadnLvl();
-        levelNmbr++;
+        if(isTransition)
+        {
+            SceneManager.LoadScene("Transition");
+            MainGameUI.instance.newLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene(levels[currLvl]);
+            currLvl = nextLvl;
+            nextLvl = generateRadnLvl();
+            levelNmbr++;
+        }
+        
     }
 }
