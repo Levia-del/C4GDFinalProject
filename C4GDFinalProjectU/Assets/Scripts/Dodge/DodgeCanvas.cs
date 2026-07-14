@@ -17,8 +17,8 @@ public class DodgeCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // int lvl = LevelsManager.instance.levelNmbr;
-        int lvl = 10;
+        int lvl = LevelsManager.instance.levelNmbr;
+        
         if(lvl<3)
         {
             spawnDelay = 1.2f;
