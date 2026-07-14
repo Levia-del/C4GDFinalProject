@@ -18,6 +18,7 @@ public class QuestionsCanvas : MonoBehaviour
     private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?"};
 
     private bool finished = false;
+    private float timer = 5f;
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
@@ -83,24 +84,33 @@ public class QuestionsCanvas : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) 
-        { answerProcess(!isRight); } 
+        { answerProcess(!isRight, false); } 
         else if (Input.GetKeyDown(KeyCode.D)) 
-        { answerProcess(isRight); }
+        { answerProcess(isRight, false); }
+
+        if(timer>0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            answerProcess(false, true);
+        }
     }
 
   
 
     void LBClicked()
     {
-        answerProcess(!isRight);
+        answerProcess(!isRight, false);
     }
 
     void RBClicked()
     {
-        answerProcess(isRight);
+        answerProcess(isRight, false);
     }
 
-    void answerProcess(bool condition)
+    void answerProcess(bool condition, bool time)
     {
         if(!finished)
         {
@@ -110,6 +120,12 @@ public class QuestionsCanvas : MonoBehaviour
                 QTXT.text = "Correct!";
                 StartCoroutine(NxtLvl());
 
+            }
+            else if(time)
+            {
+                QTXT.text = "Too Slow!";
+                MainGameUI.instance.health--;
+                StartCoroutine(NxtLvl());
             }
             else
             {
