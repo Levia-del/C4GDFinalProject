@@ -45,7 +45,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What do you love about me?", false},
         {"Why are you here?", true},
         {"Why.", true},
-        {"What is the meaning of life?.", false}
+        {"What is the meaning of life?", false}
         
     };
 
@@ -58,11 +58,11 @@ public class QuestionsCanvas : MonoBehaviour
         string q = "";
         LvlManager = LevelsManager.instance;
 
-        if (LvlManager.levelNmbr < 3)
+        if (LvlManager.levelNmbr < 6)
         {
             q = easyQs[Random.Range(0, easyQs.Length)];
         }
-        else if(LvlManager.levelNmbr < 6)
+        else if(LvlManager.levelNmbr < 12)
         {
             q = mediumQs[Random.Range(0, mediumQs.Length)];
         }
