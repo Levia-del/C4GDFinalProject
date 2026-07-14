@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Snap(int index)
     {
-        transform.position = new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y);
+        transform.DOMove(new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y), 0.2f);
     }
 
     void addInd()
