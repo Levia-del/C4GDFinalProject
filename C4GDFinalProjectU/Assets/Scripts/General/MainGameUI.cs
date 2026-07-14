@@ -45,6 +45,8 @@ public class MainGameUI : MonoBehaviour
         if(health<1)
         {
             SceneManager.LoadScene("DeathScreen");
+            Destroy(gameObject);
+            Destroy(LevelsManager.instance.gameObject);
         }
         else
         {
