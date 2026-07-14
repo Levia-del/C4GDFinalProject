@@ -14,26 +14,36 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector2(SnapToPoss[1].transform.position.x, SnapToPoss[1].transform.position.y);
     }
 
+bool isMoving = false;
+
     // Update is called once per frame
     void Update()
     {
+        if(isMoving)return;
+
         if(Input.GetKeyDown(KeyCode.A))
         {
             subtrInd();
-            Snap(currInd);
+            StartCoroutine(Snap(currInd));
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             addInd();
-            Snap(currInd);
+            StartCoroutine(Snap(currInd));
         }
     }
 
-    void Snap(int index)
+    IEnumerator Snap(int index)
     {
-        transform.DOScaleY(.5f, 0.1f);
+        isMoving = true;
+        transform.DOScaleY(.5f, .1f);
+        yield return new WaitForSeconds(.1f);
         transform.DOMove(new Vector2(SnapToPoss[index].transform.position.x, SnapToPoss[index].transform.position.y), 0.08f);
-        transform.DOScaleY(1f, .1f).WaitForCompletion();
+        yield return new WaitForSeconds(.1f);
+        transform.DOScaleY(1f, .1f);
+        transform.DOPunchPosition(Vector3.up, .1f);
+        yield return new WaitForSeconds(.1f);
+        isMoving = false;
     }
 
     void addInd()
