@@ -11,7 +11,6 @@ public class StartScrn : MonoBehaviour
     void Start()
     {
         btn.onClick.AddListener(StartGame);
-        AudioManager.audioManager.PlayStartButtonPressed();
     }
 
     // Update is called once per frame

@@ -27,9 +27,7 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
-    public void PlayStartButtonPressed()
-    {
-       audioSource.PlayOneShot(startButton, .7f);
+    public void PlaySFX(AudioClip soundeffect){
+        audioSource.PlayOneShot(soundeffect, .7f);
     }
 }

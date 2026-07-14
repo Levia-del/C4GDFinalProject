@@ -19,7 +19,7 @@ public class QuestionsCanvas : MonoBehaviour
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
-        {"Who is the best gameshow host?", new string[]{"Steve Harley","IDK"} }
+        {"Who is the best gameshow host?", new string[]{"Steve \nHarley","IDK"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
