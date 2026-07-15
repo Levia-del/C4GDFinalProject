@@ -23,7 +23,7 @@ public class ButtonCanvas : MonoBehaviour
     void Start()
     {
         txt.text = "Wait";
-        btn.interactable = false;
+     
         btn.image.color = Color.white;
         originalScale = btn.transform.localScale;
 
@@ -69,12 +69,17 @@ public class ButtonCanvas : MonoBehaviour
             {
                 StopVisualEffects();
                 finished = true;
-                btn.interactable = false;
+              
                 txt.text = "Too Slow!";
                 btn.image.color = Color.white;
                 MainGameUI.instance.health--;
                 StartCoroutine(AdvanceAfterDelay());
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            OnButtonClicked();
         }
     }
 
@@ -151,14 +156,32 @@ public class ButtonCanvas : MonoBehaviour
 
     void OnButtonClicked()
     {
-        if (!isGo || finished) return;
+        if (finished)
+        {
+            return;
+        }
+        if (!isGo)
+        {
+            StopVisualEffects();
+            finished = true;
 
-        StopVisualEffects();
-        finished = true;
-        btn.interactable = false;
-        txt.text = "Got it!";
-        btn.image.color = Color.white;
-        StartCoroutine(AdvanceAfterDelay());
+            txt.text = "Not Yet!";
+            btn.image.color = Color.white;
+            MainGameUI.instance.health--;
+            StartCoroutine(AdvanceAfterDelay());
+        }
+        else
+        {
+            StopVisualEffects();
+            finished = true;
+
+            txt.text = "Got it!";
+            btn.image.color = Color.white;
+            StartCoroutine(AdvanceAfterDelay());
+        }
+        
+
+       
     }
 
     IEnumerator AdvanceAfterDelay()
