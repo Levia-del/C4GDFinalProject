@@ -111,7 +111,7 @@ C4GDFinalProjectU/
 | **Unity 2022.3.62f3** | Game engine |
 | **Universal Render Pipeline (URP) 2D** | 2D rendering |
 | **DOTween (Demigiant)** | Tweening animations (lane snaps, punch, scale) |
-| **TextMeshPro** | Text rendering (SDF shaders for crisp text) |
+| **TextMeshPro** | Text rendering with PixelOperator SDF font for consistent pixel-art style |
 | **C#** | All game logic |
 
 ---

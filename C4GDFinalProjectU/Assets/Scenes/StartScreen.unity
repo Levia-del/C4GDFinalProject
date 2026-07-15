@@ -790,8 +790,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "I'm Stuck in a \n\t\tKiller Gameshow!\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 42f4f3598284245f79f33e7bdbe6a12b, type: 2}
-  m_sharedMaterial: {fileID: 8902315488612556506, guid: 42f4f3598284245f79f33e7bdbe6a12b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 407c51ffafb384602a7d690177d6899e, type: 2}
+  m_sharedMaterial: {fileID: 9037945858185279046, guid: 407c51ffafb384602a7d690177d6899e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -887,3 +887,4 @@ SceneRoots:
   - {fileID: 1360669751}
   - {fileID: 91299161}
   - {fileID: 600608509}
+

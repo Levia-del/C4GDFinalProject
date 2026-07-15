@@ -5,6 +5,24 @@ Entries are ordered most-recent-first.
 
 ---
 
+## [Global Font Change] — Switched all TMP_Text to PixelOperator SDF
+
+**Prompt:** "change all the texts in all scenes to this font: PixelOperator SDF, located at TextMeshPro>Resources>Fonts&Materials"
+
+**Achievement:**
+- Located PixelOperator SDF font asset (GUID: `407c51ffafb384602a7d690177d6899e`, material fileID: `9037945858185279046`).
+- Identified all font references across all 6 scene files using PowerShell Select-String.
+- **Button.unity** — Replaced LiberationSans SDF → PixelOperator SDF (2 references)
+- **Transition.unity** — Replaced LiberationSans SDF → PixelOperator SDF (2 references)
+- **DeathScreen.unity** — Replaced LiberationSans SDF → PixelOperator SDF (2 references)
+- **Dodge.unity** — Replaced LiberationSans SDF → PixelOperator SDF (2 references)
+- **StartScreen.unity** — Replaced PixelOperator-Bold SDF → PixelOperator SDF (2 references)
+- **Questions.unity** — Replaced PixelOperator-Bold SDF → PixelOperator SDF (2 references) — already had 4 PixelOperator SDF references, now all 6 are PixelOperator SDF.
+- Verified no C# scripts assign fonts at runtime — no script changes needed.
+- Post-verification: 0 LiberationSans references, 0 Bold references remain across all scenes.
+
+---
+
 ## [AudioManager Null Fix] — Fixed "value cannot be null" when calling PlaySFX
 
 **Prompt:** "when i try to call the PlaySFX method on audiomanager, unity says value cannot be null"

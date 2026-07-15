@@ -707,8 +707,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 407c51ffafb384602a7d690177d6899e, type: 2}
+  m_sharedMaterial: {fileID: 9037945858185279046, guid: 407c51ffafb384602a7d690177d6899e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1898,3 +1898,4 @@ SceneRoots:
   - {fileID: 762647178}
   - {fileID: 1492982085}
   - {fileID: 334297065}
+

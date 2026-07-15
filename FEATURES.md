@@ -27,5 +27,6 @@
 - ✅ **DOTween Animations** — Used for player movement in the Dodge minigame (smooth lane snapping with squash/stretch and punch effects).
 - ✅ **Projectile Visuals** — Falling projectiles rotate as they descend for visual feedback.
 - ✅ **Title Animation** — Sine-wave pulsing scale effect on the start screen title.
+- ✅ **PixelOperator SDF Font** — All in-game text uses the PixelOperator SDF font for a consistent pixel-art style across all scenes.
 
 ---
