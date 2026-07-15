@@ -9,6 +9,7 @@ public class ButtonCanvas : MonoBehaviour
 {
     public Button btn;
     public TMP_Text txt;
+    public bool press = false;
 
     private float waitTime;
     private float reactionTime;
@@ -156,6 +157,7 @@ public class ButtonCanvas : MonoBehaviour
 
     void OnButtonClicked()
     {
+        press = true;
         if (finished)
         {
             return;
