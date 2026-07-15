@@ -5,6 +5,26 @@ Entries are ordered most-recent-first.
 
 ---
 
+## [Heart Damage Animation] — Added TakeDamage() with fly-to-center + explosion
+
+**Prompt:** "Now let's emphasize a loss of heart, make in the maingameui a method that subtracts a heart and brings a heart to the center of the screen and explodes it (use a placeholder for the animation)"
+
+**Achievement:**
+- Added `TakeDamage()` method to `MainGameUI.cs`: decrements `health`, finds the last active heart by iterating backwards, and starts the `AnimateHeartToCenter()` coroutine.
+- Added `AnimateHeartToCenter()` coroutine with two phases:
+  - **Phase 1 (0.5s):** Heart flies from its anchored position to screen center (`Vector2.zero`) using smoothstep easing, scaling up to 1.8×.
+  - **Phase 2 (0.4s):** Placeholder "explosion" — scale bursts to 3.5× in the first 30%, then collapses while alpha fades to 0.
+- Post-animation cleanup: restores heart's original state (position, scale, color) and deactivates it.
+- Added null-guards on the `heart` GameObject throughout the coroutine — if the scene unloads mid-animation, it yields early.
+- Updated all 3 minigame scripts to use `TakeDamage()` instead of raw `health--`:
+  - **QuestionsCanvas.cs** — 2 replacements (wrong answer + timeout paths)
+  - **DodgeCanvas.cs** — 1 replacement (death path)
+  - **ButtonCanvas.cs** — 2 replacements (early click + timeout paths)
+- Added `using UnityEngine.UI;` to MainGameUI.cs for `Image` component access.
+- Total animation time (0.9s) fits within the 2-3s feedback delay before scene transition.
+
+---
+
 ## [Global Font Change] — Switched all TMP_Text to PixelOperator SDF
 
 **Prompt:** "change all the texts in all scenes to this font: PixelOperator SDF, located at TextMeshPro>Resources>Fonts&Materials"

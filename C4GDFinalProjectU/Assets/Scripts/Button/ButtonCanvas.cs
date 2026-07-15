@@ -73,7 +73,7 @@ public class ButtonCanvas : MonoBehaviour
               
                 txt.text = "Too Slow!";
                 btn.image.color = Color.white;
-                MainGameUI.instance.health--;
+                MainGameUI.instance.TakeDamage();
                 StartCoroutine(AdvanceAfterDelay());
             }
         }
@@ -170,7 +170,7 @@ public class ButtonCanvas : MonoBehaviour
 
             txt.text = "Not Yet!";
             btn.image.color = Color.white;
-            MainGameUI.instance.health--;
+            MainGameUI.instance.TakeDamage();
             StartCoroutine(AdvanceAfterDelay());
         }
         else

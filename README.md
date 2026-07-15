@@ -10,7 +10,7 @@ A chaotic collection of rapid-fire mini-games built in Unity. Survive randomized
 
 ### Core Systems
 - **Procedural Level Sequencing** — Levels are drawn randomly from a pool of three mini-games without immediate repeats, keeping each playthrough fresh.
-- **Persistent Health System** — 3 hearts tracked across all scenes via a singleton UI manager. Health depletes on failures and persists until game over.
+- **Persistent Health System** — 3 hearts tracked across all scenes via a singleton UI manager. Health depletes on failures and persists until game over. When damaged, the lost heart animates — it flies to screen center, scales up, and bursts into a placeholder explosion (scale burst + fade out).
 - **Persistent Audio Manager** — Singleton audio system playing background music and SFX with `DontDestroyOnLoad` cross-scene persistence.
 - **Difficulty Scaling** — Mini-game difficulty increases as the player progresses (more questions, faster projectiles, harder trivia).
 

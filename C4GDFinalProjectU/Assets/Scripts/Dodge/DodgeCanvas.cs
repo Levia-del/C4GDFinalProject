@@ -70,7 +70,7 @@ public class DodgeCanvas : MonoBehaviour
             {
                 player.transform.DOJump(fallTarget.transform.position, 5f, 1, .7f);
                 q = "Oh No. Deathhh!";
-                MainGameUI.instance.health--;
+                MainGameUI.instance.TakeDamage();
             }
             FTXT.text = q;
             StartCoroutine(Wait());

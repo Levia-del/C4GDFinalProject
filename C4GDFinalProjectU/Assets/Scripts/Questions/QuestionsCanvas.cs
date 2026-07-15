@@ -135,7 +135,7 @@ public class QuestionsCanvas : MonoBehaviour
             else if(time)
             {
                 QTXT.text = "Too Slow!";
-                MainGameUI.instance.health--;
+                MainGameUI.instance.TakeDamage();
                 StartCoroutine(NxtLvl());
             }
             else
@@ -151,7 +151,7 @@ public class QuestionsCanvas : MonoBehaviour
                     pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y);
                 }
                 Instantiate(QWrong, pos, QWrong.transform.rotation, transform);
-                MainGameUI.instance.health--;
+                MainGameUI.instance.TakeDamage();
                 StartCoroutine(NxtLvl());
             }
         }
