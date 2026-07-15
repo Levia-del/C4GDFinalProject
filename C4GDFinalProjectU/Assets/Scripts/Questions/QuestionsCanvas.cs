@@ -122,11 +122,11 @@ public class QuestionsCanvas : MonoBehaviour
                 Vector2 pos;
                 if (isRightBTN)
                 {
-                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y);
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y+180);
                 }
                 else
                 {
-                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y);
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 180);
                 }
                 Instantiate(QRight, pos, QRight.transform.rotation, transform);
                 StartCoroutine(NxtLvl());
@@ -144,11 +144,11 @@ public class QuestionsCanvas : MonoBehaviour
                 Vector2 pos;
                 if (isRightBTN)
                 {
-                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y);
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 180);
                 }
                 else
                 {
-                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y);
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 180);
                 }
                 Instantiate(QWrong, pos, QWrong.transform.rotation, transform);
                 MainGameUI.instance.TakeDamage();
