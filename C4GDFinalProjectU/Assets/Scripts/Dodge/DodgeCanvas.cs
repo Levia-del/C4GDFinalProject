@@ -68,6 +68,7 @@ public class DodgeCanvas : MonoBehaviour
             }
             else
             {
+                player.GetComponent<PlayerController>().lose = true;
                 player.transform.DOJump(fallTarget.transform.position, 5f, 1, .7f);
                 q = "Oh No. Deathhh!";
                 MainGameUI.instance.TakeDamage();

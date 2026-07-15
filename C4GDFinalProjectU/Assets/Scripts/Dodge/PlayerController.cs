@@ -6,6 +6,7 @@ using DG.Tweening;
 public class PlayerController : MonoBehaviour
 {
     public GameObject[] SnapToPoss;
+    public bool lose = false;
 
     private int currInd = 1;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ bool isMoving = false;
     // Update is called once per frame
     void Update()
     {
-        if(isMoving)return;
+        if(isMoving || lose)return;
 
         if(Input.GetKeyDown(KeyCode.A))
         {
@@ -46,6 +47,7 @@ bool isMoving = false;
         // transform.DOPunchPosition(Vector3.up, .1f);
         yield return new WaitForSeconds(.08f);
         isMoving = false;
+        
     }
 
     void addInd()
