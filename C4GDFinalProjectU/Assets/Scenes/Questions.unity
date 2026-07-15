@@ -747,7 +747,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797751752}
   m_CullTransparentMesh: 1
---- !u!1001 &1024198300
+--- !u!1001 &1092464204
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -755,18 +755,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 86904248813579532, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8216658039726976629, guid: f1748619aec39491f8875b322c98d238, type: 3}
-    - target: {fileID: 1521757906505812336, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3316679094472365193, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
     - target: {fileID: 3870636331234010462, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -850,18 +838,6 @@ PrefabInstance:
     - target: {fileID: 4003880995568738686, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
       propertyPath: m_Name
       value: MainGameUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4192242281221714165, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8216658039726976629, guid: f1748619aec39491f8875b322c98d238, type: 3}
-    - target: {fileID: 6222986222965401228, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8216658039726976629, guid: f1748619aec39491f8875b322c98d238, type: 3}
-    - target: {fileID: 8750481001395560201, guid: 631dfc8fcd6bb6f4e92d49a121ae6a56, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1525,10 +1501,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1803493433}
   - {fileID: 92010012}
-  - {fileID: 1024198300}
   - {fileID: 617284074}
   - {fileID: 1461111480}
   - {fileID: 1672830053677329195}
   - {fileID: 708011972}
   - {fileID: 406377061}
-
+  - {fileID: 1092464204}
