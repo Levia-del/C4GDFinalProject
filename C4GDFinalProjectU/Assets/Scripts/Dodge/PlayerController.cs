@@ -35,6 +35,8 @@ bool isMoving = false;
 
     IEnumerator Snap(int index)
     {
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.swoosh1);
         isMoving = true;
         transform.DOScaleY(.5f, .001f);
         yield return new WaitForSeconds(.001f);

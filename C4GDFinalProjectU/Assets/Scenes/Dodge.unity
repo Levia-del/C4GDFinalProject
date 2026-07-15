@@ -179,6 +179,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18f7a729c8e6ed94f8ef87b0a9b89d4d, type: 3}
+--- !u!1 &334297064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334297065}
+  m_Layer: 0
+  m_Name: FallTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &334297065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334297064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: -8.05, z: 0.11727721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &379010779
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,9 +347,45 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: BGo
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: BWin
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: DWin
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: BLose
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: DLose
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: DMove
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: QWrong
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: swoosh1
       value: 
       objectReference: {fileID: 8300000, guid: 1dca6ad5df78c3f4e8b70d1c26359d4d, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: QCorrect
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: mainTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1235,7 +1302,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1743647119, guid: bf882a2e0d2cb4e8f87b8f7150866107, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1498,6 +1565,8 @@ MonoBehaviour:
   - {fileID: 848186090}
   - {fileID: 1337408381}
   FTXT: {fileID: 983806257}
+  player: {fileID: 1603353934}
+  fallTarget: {fileID: 334297064}
 --- !u!1 &1991656787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,3 +1897,4 @@ SceneRoots:
   - {fileID: 379010781}
   - {fileID: 762647178}
   - {fileID: 1492982085}
+  - {fileID: 334297065}

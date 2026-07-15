@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class DodgeCanvas : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class DodgeCanvas : MonoBehaviour
     public GameObject projectile;
     public GameObject[] spawnPoints;
     public TMP_Text FTXT;
+
+    public GameObject player;
+    public GameObject fallTarget;
 
     private float enemySpeed;
     private float timeToSurvive = 10f;
@@ -64,6 +68,7 @@ public class DodgeCanvas : MonoBehaviour
             }
             else
             {
+                player.transform.DOJump(fallTarget.transform.position, 5f, 1, .7f);
                 q = "Oh No. Deathhh!";
                 MainGameUI.instance.health--;
             }
