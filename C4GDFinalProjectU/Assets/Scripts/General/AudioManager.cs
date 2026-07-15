@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager audioManager;
+    public static AudioManager instance;
     AudioSource audioSource;
     public AudioClip mainTheme;
     public AudioClip startButton;
     public AudioClip swoosh1;
+    public AudioClip QCorrect;
+    public AudioClip QWrong;
+    public AudioClip DMove;
+    public AudioClip DLose;
+    public AudioClip DWin;
+    public AudioClip BGo;
+    public AudioClip BLose;
+    public AudioClip BWin;
     // Start is called before the first frame update
     void Awake()
     {
-        if (audioManager != null && audioManager != this)
+        if (instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
-            audioManager = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
