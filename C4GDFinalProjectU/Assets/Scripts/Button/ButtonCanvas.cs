@@ -29,7 +29,7 @@ public class ButtonCanvas : MonoBehaviour
         originalScale = btn.transform.localScale;
 
         // Random wait duration between 3 and 15 seconds
-        waitTime = Random.Range(3f, 15f);
+        waitTime = Random.Range(1f, 10f);
 
         // Wire up button click
         btn.onClick.AddListener(OnButtonClicked);
@@ -53,7 +53,7 @@ public class ButtonCanvas : MonoBehaviour
                 btn.interactable = true;
                 isGo = true;
                 // Reaction window starts at 5s, decreases with level, minimum 1s
-                reactionTime = Mathf.Max(5f - LevelsManager.instance.levelNmbr, 1f);
+                reactionTime = Mathf.Max(3f - (LevelsManager.instance.levelNmbr*0.5f), .5f);
 
                 // Start pulsating scale and color flash effects
                 StartVisualEffects();
