@@ -12,6 +12,7 @@ public class QuestionsCanvas : MonoBehaviour
     public LevelsManager LvlManager;
     public TMP_Text LTXT;
     public TMP_Text RTXT;
+    public GameObject QWrong, QRight;
 
     private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
     private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?"};
@@ -84,9 +85,9 @@ public class QuestionsCanvas : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) 
-        { answerProcess(!isRight, false); } 
+        { answerProcess(!isRight, false, false); } 
         else if (Input.GetKeyDown(KeyCode.D)) 
-        { answerProcess(isRight, false); }
+        { answerProcess(isRight, false, true); }
 
         if(timer>0)
         {
@@ -94,7 +95,7 @@ public class QuestionsCanvas : MonoBehaviour
         }
         else
         {
-            answerProcess(false, true);
+            answerProcess(false, true, false);
         }
     }
 
@@ -102,15 +103,15 @@ public class QuestionsCanvas : MonoBehaviour
 
     void LBClicked()
     {
-        answerProcess(!isRight, false);
+        answerProcess(!isRight, false, false);
     }
 
     void RBClicked()
     {
-        answerProcess(isRight, false);
+        answerProcess(isRight, false, true);
     }
 
-    void answerProcess(bool condition, bool time)
+    void answerProcess(bool condition, bool time, bool isRightBTN)
     {
         if(!finished)
         {
@@ -118,6 +119,16 @@ public class QuestionsCanvas : MonoBehaviour
             if (condition)
             {
                 QTXT.text = "Correct!";
+                Vector2 pos;
+                if (isRightBTN)
+                {
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y);
+                }
+                else
+                {
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y);
+                }
+                Instantiate(QRight, pos, QRight.transform.rotation, transform);
                 StartCoroutine(NxtLvl());
 
             }
@@ -130,6 +141,16 @@ public class QuestionsCanvas : MonoBehaviour
             else
             {
                 QTXT.text = "Nope. Death!";
+                Vector2 pos;
+                if (isRightBTN)
+                {
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y);
+                }
+                else
+                {
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y);
+                }
+                Instantiate(QWrong, pos, QWrong.transform.rotation, transform);
                 MainGameUI.instance.health--;
                 StartCoroutine(NxtLvl());
             }
