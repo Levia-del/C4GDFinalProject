@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class LevelsManager : MonoBehaviour
 {
@@ -59,24 +60,25 @@ public class LevelsManager : MonoBehaviour
         }
         else
         {
+            MainGameUI.instance.Rcurtn.anchoredPosition = new Vector2(0, 0);
+            MainGameUI.instance.curtn.SetActive(true);
             SceneManager.LoadScene(levels[nextLvl]);
             currLvl = nextLvl;
             nextLvl = generateRadnLvl();
             levelNmbr++;
             MainGameUI.instance.setNLTXT("Next level is: "+levels[nextLvl]);
+            MainGameUI.instance.Rcurtn.DOMoveY(1600, 1f).OnComplete(() =>
+            {
+                MainGameUI.instance.curtn.SetActive(false);
+                
+            });
         }
     }
 
     IEnumerator TransitionWithCurtain()
     {
-        // Reset hearts first
-       
-
-        // Animate curtain down and wait for it to finish
-        
-
-        // Brief pause with curtain covering, then load transition
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.9f);
         SceneManager.LoadScene("Transition");
     }
+    
 }

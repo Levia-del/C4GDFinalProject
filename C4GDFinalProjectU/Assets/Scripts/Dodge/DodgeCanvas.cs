@@ -39,7 +39,7 @@ public class DodgeCanvas : MonoBehaviour
             timeToSurvive = 20f;
             enemySpeed = 14f;
         }
-        InvokeRepeating("spawnProjectile", 0, spawnDelay);
+        InvokeRepeating("spawnProjectile", 2, spawnDelay);
     }
 
     // Update is called once per frame

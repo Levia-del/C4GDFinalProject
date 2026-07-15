@@ -10,6 +10,7 @@ public class MainGameUI : MonoBehaviour
 {
     public static MainGameUI instance;
     public GameObject curtn;
+    public RectTransform Rcurtn;
     public GameObject[] hearts;
     public int health = 3;
     public TMP_Text NLTXT;
@@ -19,11 +20,12 @@ public class MainGameUI : MonoBehaviour
     void Start()
     {
         
-            curtn.SetActive(false);
-            
-           
+        curtn.SetActive(false);
+        Rcurtn = curtn.GetComponent<RectTransform>();
 
-        if(instance == null)
+
+
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -229,7 +231,7 @@ public class MainGameUI : MonoBehaviour
                 hearts[i].SetActive(true);
             }
             curtn.SetActive(true);
-            curtn.GetComponent<RectTransform>().DOMoveY(550, 2f).OnComplete(() =>
+            Rcurtn.DOMoveY(550, 2f).OnComplete(() =>
             {
                 curtn.SetActive(false);
             });
