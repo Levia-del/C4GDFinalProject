@@ -14,10 +14,21 @@ public class MainGameUI : MonoBehaviour
     public GameObject[] hearts;
     public int health = 3;
     public TMP_Text NLTXT;
+    public GameObject NLI;
 
- 
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    void Start()
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+        void Start()
     {
         
         curtn.SetActive(false);
@@ -25,15 +36,7 @@ public class MainGameUI : MonoBehaviour
 
 
 
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
         for(int i = 0;i< hearts.Length;i++)
         {
             hearts[i].SetActive(false);
@@ -233,7 +236,7 @@ public class MainGameUI : MonoBehaviour
             curtn.SetActive(true);
             Rcurtn.DOMoveY(550, 2f).OnComplete(() =>
             {
-                curtn.SetActive(false);
+                //curtn.SetActive(false);
             });
         }
     }
@@ -241,5 +244,12 @@ public class MainGameUI : MonoBehaviour
     public void setNLTXT(string txt)
     {
         NLTXT.text = txt;
+    }
+
+    public void setNextVis(bool vis)
+    {
+       
+        NLI.SetActive(vis);
+        NLTXT.gameObject.SetActive(vis);
     }
 }
