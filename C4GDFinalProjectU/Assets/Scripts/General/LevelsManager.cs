@@ -25,6 +25,7 @@ public class LevelsManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
         currLvl = generateRadnLvl();
         nextLvl = generateRadnLvl();
