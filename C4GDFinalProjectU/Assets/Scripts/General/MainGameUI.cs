@@ -115,7 +115,7 @@ public class MainGameUI : MonoBehaviour
         duration = 0.4f;
         elapsed = 0f;
         Vector3 maxScale = startScale * 3.5f;
-
+        StartCoroutine(Flash());
         while (elapsed < duration)
         {
             if (heart == null) yield break;
@@ -142,43 +142,7 @@ public class MainGameUI : MonoBehaviour
 
 
 
-        // ── Screen Flash: quick white flash right before explosion ──
-        GameObject flashOverlay = new GameObject("DamageFlash", typeof(Image));
-        RectTransform flashRect = flashOverlay.GetComponent<RectTransform>();
-        Image flashImage = flashOverlay.GetComponent<Image>();
-
-        // Attach to the same canvas
-        flashOverlay.transform.SetParent(transform, false);
-        flashRect.anchorMin = Vector2.zero;
-        flashRect.anchorMax = Vector2.one;
-        flashRect.offsetMin = Vector2.zero;
-        flashRect.offsetMax = Vector2.zero;
-        flashImage.color = new Color(255f, 1f, 1f, 0f);
-        flashImage.raycastTarget = false;
-
-        // Flash off: quickly fade to white
-        float flashDuration = 0.2f;
-        float flashElapsed = 0f;
-        while (flashElapsed < flashDuration)
-        {
-            float t = flashElapsed / flashDuration;
-            flashImage.color = new Color(255f, 1f, 1f, t);
-            flashElapsed += Time.deltaTime;
-            yield return null;
-        }
-        flashImage.color = new Color(255f, 1f, 1f, 1f);
-
-        // Flash on: quickly fade back to clear
-        flashElapsed = 0f;
-        while (flashElapsed < flashDuration)
-        {
-            float t = flashElapsed / flashDuration;
-            flashImage.color = new Color(255f, 1f, 1f, 1f - t);
-            flashElapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        Destroy(flashOverlay);
+        
 
         
 
@@ -190,6 +154,49 @@ public class MainGameUI : MonoBehaviour
             heart.transform.localScale = startScale;
             heartRect.anchoredPosition = startPos;
         }
+    }
+
+
+    IEnumerator Flash()
+    {
+        yield return new WaitForSeconds(0.2f);
+        // ── Screen Flash: quick white flash right before explosion ──
+        GameObject flashOverlay = new GameObject("DamageFlash", typeof(Image));
+        RectTransform flashRect = flashOverlay.GetComponent<RectTransform>();
+        Image flashImage = flashOverlay.GetComponent<Image>();
+
+        // Attach to the same canvas
+        flashOverlay.transform.SetParent(transform, false);
+        flashRect.anchorMin = Vector2.zero;
+        flashRect.anchorMax = Vector2.one;
+        flashRect.offsetMin = Vector2.zero;
+        flashRect.offsetMax = Vector2.zero;
+        flashImage.color = new Color(1f, 0f, 0f, 0f);
+        flashImage.raycastTarget = false;
+
+        // Flash on: quickly fade to red
+        float flashDuration = 0.1f;
+        float flashElapsed = 0f;
+        while (flashElapsed < flashDuration)
+        {
+            float t = flashElapsed / flashDuration;
+            flashImage.color = new Color(1f, 0f, 0f, t);
+            flashElapsed += Time.deltaTime;
+            yield return null;
+        }
+        flashImage.color = new Color(1f, 0f, 0f, 1f);
+
+        // Flash off: quickly fade back to clear
+        flashElapsed = 0f;
+        while (flashElapsed < flashDuration)
+        {
+            float t = flashElapsed / flashDuration;
+            flashImage.color = new Color(1f, 0f, 0f, 1f - t);
+            flashElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(flashOverlay);
     }
 
     public void newLevel()
