@@ -50,10 +50,12 @@ public class LevelsManager : MonoBehaviour
 
     public void LevelComplete(bool isTransition)
     {
-        if(isTransition)
+        if (isTransition)
         {
-            SceneManager.LoadScene("Transition");
+            // Curtain close + transition handled in coroutine
+
             MainGameUI.instance.newLevel();
+            StartCoroutine(TransitionWithCurtain());
         }
         else
         {
@@ -63,6 +65,18 @@ public class LevelsManager : MonoBehaviour
             levelNmbr++;
             MainGameUI.instance.setNLTXT("Next level is: "+levels[nextLvl]);
         }
+    }
+
+    IEnumerator TransitionWithCurtain()
+    {
+        // Reset hearts first
+       
+
+        // Animate curtain down and wait for it to finish
         
+
+        // Brief pause with curtain covering, then load transition
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Transition");
     }
 }

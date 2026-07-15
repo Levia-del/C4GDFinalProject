@@ -164,11 +164,11 @@ public class QuestionsCanvas : MonoBehaviour
                 Vector2 pos;
                 if (isRightBTN)
                 {
-                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 50);
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 15);
                 }
                 else
                 {
-                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 50);
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 15);
                 }
                 Instantiate(QWrong, pos, QWrong.transform.rotation, transform);
                 MainGameUI.instance.TakeDamage();

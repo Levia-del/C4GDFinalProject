@@ -543,7 +543,7 @@ MonoBehaviour:
   LTXT: {fileID: 1837118651}
   RTXT: {fileID: 1932946989}
   QWrong: {fileID: 5473448533646347839, guid: fc58d3534ba981b4da01d3fd89aa81cd, type: 3}
-  QRight: {fileID: 5473448533646347839, guid: fc58d3534ba981b4da01d3fd89aa81cd, type: 3}
+  QRight: {fileID: 1541841465613096599, guid: 9be3607270a9f814d8b73e09e2ed91ef, type: 3}
 --- !u!1 &708011970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,10 +1510,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1803493433}
+  - {fileID: 1092464204}
   - {fileID: 92010012}
   - {fileID: 617284074}
   - {fileID: 1461111480}
   - {fileID: 1672830053677329195}
   - {fileID: 708011972}
   - {fileID: 406377061}
-  - {fileID: 1092464204}

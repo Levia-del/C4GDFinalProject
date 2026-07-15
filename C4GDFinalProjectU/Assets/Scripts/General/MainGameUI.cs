@@ -4,17 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 public class MainGameUI : MonoBehaviour
 {
     public static MainGameUI instance;
+    public GameObject curtn;
     public GameObject[] hearts;
     public int health = 3;
     public TMP_Text NLTXT;
 
-    // Start is called before the first frame update
+ 
+
     void Start()
     {
+        
+            curtn.SetActive(false);
+            
+           
+
         if(instance == null)
         {
             instance = this;
@@ -199,6 +207,9 @@ public class MainGameUI : MonoBehaviour
         Destroy(flashOverlay);
     }
 
+    
+    
+
     public void newLevel()
     {
         if(health<1)
@@ -217,9 +228,12 @@ public class MainGameUI : MonoBehaviour
             {
                 hearts[i].SetActive(true);
             }
+            curtn.SetActive(true);
+            curtn.GetComponent<RectTransform>().DOMoveY(550, 2f).OnComplete(() =>
+            {
+                curtn.SetActive(false);
+            });
         }
-        
-
     }
 
     public void setNLTXT(string txt)
