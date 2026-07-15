@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     AudioSource audioSource;
     public AudioClip mainTheme;
     public AudioClip startButton;
+    public AudioClip swoosh1;
     // Start is called before the first frame update
     void Awake()
     {
