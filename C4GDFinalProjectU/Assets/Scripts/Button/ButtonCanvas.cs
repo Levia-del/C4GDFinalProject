@@ -122,7 +122,7 @@ public class ButtonCanvas : MonoBehaviour
     IEnumerator PulseScale()
     {
         float minFactor = 1.0f;
-        float maxFactor = 1.5f;
+        float maxFactor = 1.2f;
         float frequency = 2.5f; // full pulse cycles per second
 
         while (true)
