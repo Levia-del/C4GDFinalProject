@@ -16,7 +16,7 @@ public class QuestionsCanvas : MonoBehaviour
 
     private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
     private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?"};
-    private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?"};
+    private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "Error: question blOcked"};
 
     private bool finished = false;
     private float timer = 5f;
@@ -32,7 +32,10 @@ public class QuestionsCanvas : MonoBehaviour
         {"What do you love about me?", new string[]{"Mustache","Hair"} },
         {"Why are you here?", new string[]{"To suffer.", "To get the \nrating up!" } },
         {"Why.", new string[]{"...","...."} },
-        {"What is the meaning of life?", new string[]{"To live","to Live"} }
+        {"What is the meaning of life?", new string[]{"To live","to Live"} },
+        {"What is a lexicon?", new string[]{"Alphabet","An old \nbook"} },
+        {"Error: question blocked", new string[]{"do not","report"} },
+        {"Error: question blOcked", new string[]{"report","do not"}}
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
@@ -46,7 +49,10 @@ public class QuestionsCanvas : MonoBehaviour
         {"What do you love about me?", false},
         {"Why are you here?", true},
         {"Why.", true},
-        {"What is the meaning of life?", false}
+        {"What is the meaning of life?", false},
+        {"What is a lexicon?", false},
+        {"Error: question blocked", true},
+        {"Error: question blOcked", false}
         
     };
 
