@@ -118,6 +118,7 @@ public class QuestionsCanvas : MonoBehaviour
             finished = true;
             if (condition)
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.QCorrect, .5f);
                 QTXT.text = "Correct!";
                 Vector2 pos;
                 if (isRightBTN)
@@ -134,12 +135,14 @@ public class QuestionsCanvas : MonoBehaviour
             }
             else if(time)
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.QWrong, .5f);
                 QTXT.text = "Too Slow!";
                 MainGameUI.instance.TakeDamage();
                 StartCoroutine(NxtLvl());
             }
             else
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.QWrong, .5f);
                 QTXT.text = "Nope. Death!";
                 Vector2 pos;
                 if (isRightBTN)
