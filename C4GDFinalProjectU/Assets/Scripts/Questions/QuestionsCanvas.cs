@@ -14,8 +14,8 @@ public class QuestionsCanvas : MonoBehaviour
     public TMP_Text RTXT;
     public GameObject QWrong, QRight;
 
-    private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
-    private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?"};
+    private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?", "What is your Reward?", "Is this game gonna end?"};
+    private string[] mediumQs = {"What is the capital of Australia?", "What state am I from?", "What do you love about me?", "What is the Capital of Australia?","What is your greatest desire?", "What is the capital of New York State?"};
     private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "Error: question blOcked"};
 
     private bool finished = false;
@@ -25,7 +25,7 @@ public class QuestionsCanvas : MonoBehaviour
     {
         {"Who is the best gameshow host?", new string[]{"Steve \nHarvey","IDK"} },
         {"What game are we playing?", new string[]{"Family \nFeud","Help! \nISIAKG"} },
-        {"What is your reward?", new string[]{"A Million \nDollars","More \nMinigames!"} },
+        {"What is your reward?", new string[]{"A Million \nDollars!","More \nMinigames!"} },
         {"How do you win?", new string[]{"You Don't","Survive \n10 Minigames"} },
         {"What is the capital of Australia?", new string[]{"Sydney","Canberra"} },
         {"What state am I from?", new string[]{"West \nVirginia","New \nJersey"} },
@@ -35,7 +35,12 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is the meaning of life?", new string[]{"To live","to Live"} },
         {"What is a lexicon?", new string[]{"Alphabet","An old \nbook"} },
         {"Error: question blocked", new string[]{"do not","report"} },
-        {"Error: question blOcked", new string[]{"report","do not"}}
+        {"Error: question blOcked", new string[]{"report","do not"} },
+        {"What is the Capital of Australia?", new string[]{"Canberra", "Queensland"} },
+        {"What is your greatest desire?", new string[]{"More \nMinigames","Freedom"} },
+        {"What is the capital of New York State", new string[]{"New York \nCity","Syracuse"} },
+        {"What is your Reward?", new string[]{"More \nMinigames","A Million \nDollars!"} },
+        {"is this game gonna end?", new string[]{"Soon","Never will \n it"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
@@ -52,7 +57,12 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is the meaning of life?", false},
         {"What is a lexicon?", false},
         {"Error: question blocked", true},
-        {"Error: question blOcked", false}
+        {"Error: question blOcked", false},
+        {"What is the Capital of Australia", false},
+        {"What your greatest desire?", true},
+        {"What is the capital of New York State?", true},
+        {"What is your Reward?", false},
+        {"is this game gonna end?", true}
         
     };
 
