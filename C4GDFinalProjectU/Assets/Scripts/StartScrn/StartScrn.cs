@@ -9,6 +9,7 @@ public class StartScrn : MonoBehaviour
 {
     public Button btn;
     public Image fadeImage;
+    bool isClicked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,11 @@ public class StartScrn : MonoBehaviour
 
     void SG()
     {
+        if (isClicked == true) return;
+
         StartCoroutine(StartGame());
+        isClicked = true;
+        btn.GetComponent<Button>().interactable = false;
     }
 
     IEnumerator StartGame()

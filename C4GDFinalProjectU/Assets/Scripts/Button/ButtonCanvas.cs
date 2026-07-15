@@ -72,6 +72,7 @@ public class ButtonCanvas : MonoBehaviour
             else
             {
                 StopVisualEffects();
+                AudioManager.instance.StopMusic();
                 finished = true;
               
                 txt.text = "Too Slow!";
