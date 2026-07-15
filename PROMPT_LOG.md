@@ -5,6 +5,20 @@ Entries are ordered most-recent-first.
 
 ---
 
+## [AudioManager Null Fix] — Fixed "value cannot be null" when calling PlaySFX
+
+**Prompt:** "when i try to call the PlaySFX method on audiomanager, unity says value cannot be null"
+
+**Achievement:**
+- Diagnosed three root causes for the null error: (1) `audioSource` was assigned in `Start()` instead of `Awake()`, so it wasn't available if called early; (2) the AudioSource component might be missing from the AudioManager prefab/GameObject; (3) no null checks in `PlaySFX()`.
+- Moved `GetComponent<AudioSource>()` into `Awake()` so it's initialized as early as possible.
+- Added auto-creation of AudioSource via `gameObject.AddComponent<AudioSource>()` if the component is missing — addresses the most likely root cause.
+- Added null checks in `PlaySFX()` for both `audioSource` and `soundeffect` parameter with helpful `Debug.LogWarning` messages.
+- Added missing `return;` after `Destroy(gameObject)` in the singleton duplicate check.
+- Removed the now-empty `Start()` method (no dead code).
+
+---
+
 ## [Re-Familiarization] — Re-read all project files and scripts
 
 **Prompt:** "refamiliarize yourself with the project using .md files and the project files"
