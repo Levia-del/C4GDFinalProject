@@ -36,7 +36,7 @@ public class TransitionCanvas : MonoBehaviour
             {
                 mess = "Dodge with A-D or die!";
             }
-            else if (LvlManager.nextLvl == 1)
+            else if (LvlManager.nextLvl == 2)
             {
                 mess = "When I say GO! press the button";
             }
