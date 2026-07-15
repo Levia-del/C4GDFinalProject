@@ -894,6 +894,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: BGo
+      value: 
+      objectReference: {fileID: 8300000, guid: 4da898f73544148b9952239a704fc67e, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: clockTick
+      value: 
+      objectReference: {fileID: 8300000, guid: 5438fffc639164652ab9a0e2c079b7ef, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

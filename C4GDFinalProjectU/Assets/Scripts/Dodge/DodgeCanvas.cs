@@ -15,7 +15,7 @@ public class DodgeCanvas : MonoBehaviour
     public GameObject fallTarget;
 
     private float enemySpeed;
-    private float timeToSurvive = 10f;
+    private float timeToSurvive = 8f;
     private float spawnDelay = 1f;
     private bool finished = false;
     // Start is called before the first frame update

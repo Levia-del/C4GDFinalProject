@@ -551,6 +551,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: rockFall
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: mainTheme
       value: 
       objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}

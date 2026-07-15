@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip BLose;
     public AudioClip BWin;
     public AudioClip Cheer;
+    public AudioClip clockTick;
+    public AudioClip rockFall;
 
     void Awake()
     {

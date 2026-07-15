@@ -437,6 +437,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 456100640a7b799468dfa9b4241112c6, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: clockTick
+      value: 
+      objectReference: {fileID: 8300000, guid: 5438fffc639164652ab9a0e2c079b7ef, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: startButton
       value: 
       objectReference: {fileID: 8300000, guid: 7b0ea0c4599a55c43810bd7de2453f44, type: 3}

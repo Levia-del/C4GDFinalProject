@@ -33,6 +33,8 @@ public class ButtonCanvas : MonoBehaviour
 
         // Wire up button click
         btn.onClick.AddListener(OnButtonClicked);
+
+        AudioManager.instance.PlayMusic(AudioManager.instance.clockTick);
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class ButtonCanvas : MonoBehaviour
                 txt.text = "Go!";
                 btn.interactable = true;
                 isGo = true;
+                AudioManager.instance.PlaySFX(AudioManager.instance.BGo, 1.5f);
                 // Reaction window starts at 5s, decreases with level, minimum 1s
                 reactionTime = Mathf.Max(3f - (LevelsManager.instance.levelNmbr*0.5f), .5f);
 
@@ -157,7 +160,7 @@ public class ButtonCanvas : MonoBehaviour
 
     void OnButtonClicked()
     {
-        
+        AudioManager.instance.StopMusic();
         if (finished)
         {
             return;

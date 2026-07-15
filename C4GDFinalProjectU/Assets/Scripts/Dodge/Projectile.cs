@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         dc = FindAnyObjectByType<DodgeCanvas>();
+        AudioManager.instance.PlaySFX(AudioManager.instance.rockFall, 0.6f);
     }
 
     // Update is called once per frame
