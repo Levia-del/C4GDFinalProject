@@ -107,6 +107,8 @@ public class MainGameUI : MonoBehaviour
         heartRect.anchoredPosition = centerPos;
         heart.transform.localScale = startScale * 1.8f;
 
+
+
         // ── Phase 2: Placeholder "explosion" (0.4s) ──
         //   - 0-30%:   scale bursts up to 3.5x
         //   - 30-100%: scale shrinks to 0 while fading alpha
@@ -136,6 +138,49 @@ public class MainGameUI : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+
+
+
+
+        // ── Screen Flash: quick white flash right before explosion ──
+        GameObject flashOverlay = new GameObject("DamageFlash", typeof(Image));
+        RectTransform flashRect = flashOverlay.GetComponent<RectTransform>();
+        Image flashImage = flashOverlay.GetComponent<Image>();
+
+        // Attach to the same canvas
+        flashOverlay.transform.SetParent(transform, false);
+        flashRect.anchorMin = Vector2.zero;
+        flashRect.anchorMax = Vector2.one;
+        flashRect.offsetMin = Vector2.zero;
+        flashRect.offsetMax = Vector2.zero;
+        flashImage.color = new Color(255f, 1f, 1f, 0f);
+        flashImage.raycastTarget = false;
+
+        // Flash off: quickly fade to white
+        float flashDuration = 0.2f;
+        float flashElapsed = 0f;
+        while (flashElapsed < flashDuration)
+        {
+            float t = flashElapsed / flashDuration;
+            flashImage.color = new Color(255f, 1f, 1f, t);
+            flashElapsed += Time.deltaTime;
+            yield return null;
+        }
+        flashImage.color = new Color(255f, 1f, 1f, 1f);
+
+        // Flash on: quickly fade back to clear
+        flashElapsed = 0f;
+        while (flashElapsed < flashDuration)
+        {
+            float t = flashElapsed / flashDuration;
+            flashImage.color = new Color(255f, 1f, 1f, 1f - t);
+            flashElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(flashOverlay);
+
+        
 
         // Final cleanup
         if (heart != null)

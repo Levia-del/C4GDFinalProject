@@ -5,6 +5,21 @@ Entries are ordered most-recent-first.
 
 ---
 
+## [Screen Flash] — Added full-screen white flash before heart explosion
+
+**Prompt:** "Now add so that the screen also flashes off and on right before the heart explosion animation, put it in the same method"
+
+**Achievement:**
+- Added a full-screen white Image overlay flash between Phase 1 (fly to center) and Phase 2 (explosion) in `AnimateHeartToCenter()`.
+- Flash overlay created dynamically as a child of the MainGameUI Canvas with `anchorMin/Max` 0→1 and zero offsets to fill the entire screen.
+- Flash sequence: 0.1s fade-in (alpha 0→1, screen goes white) → 0.1s fade-out (alpha 1→0, screen returns) → overlay destroyed.
+- `raycastTarget = false` prevents the overlay from intercepting clicks.
+- Total flash duration (0.2s) fits cleanly between the 0.5s fly-in and 0.4s explosion.
+- No memory leak — overlay is properly `Destroy()`'d after the flash completes.
+- Confirmed zero remaining `health--` references in all minigame scripts.
+
+---
+
 ## [Heart Damage Animation] — Added TakeDamage() with fly-to-center + explosion
 
 **Prompt:** "Now let's emphasize a loss of heart, make in the maingameui a method that subtracts a heart and brings a heart to the center of the screen and explodes it (use a placeholder for the animation)"

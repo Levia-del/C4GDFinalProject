@@ -8,7 +8,7 @@
 
 - ✅ **AudioManager** — Singleton persistent audio system that plays background music and SFX. Uses `DontDestroyOnLoad` to persist across scenes. Exposes `PlaySFX()` for triggering one-shot sound effects.
 - ✅ **LevelsManager** — Singleton that manages level progression. Holds an array of minigame scene names (`Questions`, `Dodge`, `Button`), generates random level sequences (no repeats), tracks the current level number, and handles scene transitions via `LevelComplete()`.
-- ✅ **MainGameUI** — Singleton persistent UI manager. Displays health as heart icons (up to 3), updates hearts on level transitions, and triggers the DeathScreen when health reaches 0. Includes `TakeDamage()` which animates the lost heart flying to screen center and exploding (placeholder burst + fade).
+- ✅ **MainGameUI** — Singleton persistent UI manager. Displays health as heart icons (up to 3), updates hearts on level transitions, and triggers the DeathScreen when health reaches 0. Includes `TakeDamage()` which animates the lost heart flying to screen center and exploding (placeholder burst + fade). Features a full-screen white flash (0.1s on + 0.1s off) right before the explosion for dramatic impact.
 
 ## 🖥️ Screens / UI
 
