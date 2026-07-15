@@ -409,8 +409,8 @@ Canvas:
   m_GameObject: {fileID: 424760995}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 497990299}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -421,7 +421,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &424760999
 RectTransform:
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 1026644444}
   txt: {fileID: 96254831}
+  hand: {fileID: 405054779407195505, guid: 629ca9ba2601f4c6e84a9588c6814153, type: 3}
 --- !u!1 &452639235
 GameObject:
   m_ObjectHideFlags: 0
