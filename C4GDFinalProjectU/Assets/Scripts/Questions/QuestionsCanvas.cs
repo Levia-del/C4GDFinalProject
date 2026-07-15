@@ -38,7 +38,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"Error: question blOcked", new string[]{"report","do not"} },
         {"What is the Capital of Australia?", new string[]{"Canberra", "Queensland"} },
         {"What is your greatest desire?", new string[]{"More \nMinigames","Freedom"} },
-        {"What is the capital of New York State", new string[]{"New York \nCity","Syracuse"} },
+        {"What is the capital of New York State?", new string[]{"New York \nCity","Syracuse"} },
         {"What is your Reward?", new string[]{"More \nMinigames","A Million \nDollars!"} },
         {"Is this game gonna end?", new string[]{"Soon","Never will \n it"} }
     };
@@ -58,8 +58,8 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is a lexicon?", false},
         {"Error: question blocked", true},
         {"Error: question blOcked", false},
-        {"What is the Capital of Australia", false},
-        {"What your greatest desire?", true},
+        {"What is the Capital of Australia?", false},
+        {"What is your greatest desire?", true},
         {"What is the capital of New York State?", true},
         {"What is your Reward?", false},
         {"Is this game gonna end?", true}
