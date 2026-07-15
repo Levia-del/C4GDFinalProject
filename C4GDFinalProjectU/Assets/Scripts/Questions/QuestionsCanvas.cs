@@ -40,7 +40,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is your greatest desire?", new string[]{"More \nMinigames","Freedom"} },
         {"What is the capital of New York State", new string[]{"New York \nCity","Syracuse"} },
         {"What is your Reward?", new string[]{"More \nMinigames","A Million \nDollars!"} },
-        {"is this game gonna end?", new string[]{"Soon","Never will \n it"} }
+        {"Is this game gonna end?", new string[]{"Soon","Never will \n it"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
@@ -62,7 +62,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What your greatest desire?", true},
         {"What is the capital of New York State?", true},
         {"What is your Reward?", false},
-        {"is this game gonna end?", true}
+        {"Is this game gonna end?", true}
         
     };
 
