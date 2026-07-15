@@ -427,7 +427,7 @@ PrefabInstance:
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: Cheer
       value: 
-      objectReference: {fileID: 8300000, guid: e78d3ec7d94fc441caee8f33d2b4a603, type: 3}
+      objectReference: {fileID: 8300000, guid: 84d5cac6f26cd4333bfe51967005d82c, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: QWrong
       value: 

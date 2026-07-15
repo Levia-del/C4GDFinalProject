@@ -11,15 +11,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip swoosh1;
     public AudioClip QCorrect;
     public AudioClip QWrong;
-    public AudioClip DLose;
-    public AudioClip DWin;
     public AudioClip BGo;
-    public AudioClip BLose;
-    public AudioClip BWin;
     public AudioClip Cheer;
     public AudioClip clockTick;
     public AudioClip rockFall;
     public AudioClip crowdBoo;
+    public AudioClip GeneralLose;
+    public AudioClip GeneralWin;
 
     void Awake()
     {

@@ -33,8 +33,8 @@ public class StartScrn : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, 1);
-        AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .3f);
+        AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .7f);
+        AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .5f);
         fadeImage.DOFade(1, 2.5f);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Transition");
