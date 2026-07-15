@@ -17,26 +17,40 @@ public class AudioManager : MonoBehaviour
     public AudioClip BGo;
     public AudioClip BLose;
     public AudioClip BWin;
-    // Start is called before the first frame update
+
     void Awake()
     {
         if (instance != null)
         {
             Destroy(gameObject);
+            return;
         }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
-    void Start()
-    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Get or create AudioSource as early as possible
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
-    public void PlaySFX(AudioClip soundeffect){
-        audioSource.PlayOneShot(soundeffect, .7f);
+    public void PlaySFX(AudioClip soundeffect)
+    {
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioManager: AudioSource is null. Creating one.");
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        if (soundeffect == null)
+        {
+            Debug.LogWarning("AudioManager: Attempted to play a null AudioClip.");
+            return;
+        }
+
+        audioSource.PlayOneShot(soundeffect, 0.7f);
     }
 }
