@@ -11,12 +11,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip swoosh1;
     public AudioClip QCorrect;
     public AudioClip QWrong;
-    public AudioClip DMove;
     public AudioClip DLose;
     public AudioClip DWin;
     public AudioClip BGo;
     public AudioClip BLose;
     public AudioClip BWin;
+    public AudioClip Cheer;
 
     void Awake()
     {
@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(AudioClip soundeffect)
+    public void PlaySFX(AudioClip soundeffect, float volume)
     {
         if (audioSource == null)
         {
@@ -51,6 +51,18 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        audioSource.PlayOneShot(soundeffect, 0.7f);
+        audioSource.PlayOneShot(soundeffect, volume);
+    }
+
+    public void PlayMusic(AudioClip music)
+    {
+        audioSource.clip = music;
+        audioSource.Play();
+        
+    }
+
+    public void StopMusic()
+    {
+        audioSource.Stop();
     }
 }
