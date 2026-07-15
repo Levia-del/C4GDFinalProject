@@ -421,6 +421,10 @@ PrefabInstance:
       value: AudioManager (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: BGo
+      value: 
+      objectReference: {fileID: 8300000, guid: 4da898f73544148b9952239a704fc67e, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: Cheer
       value: 
       objectReference: {fileID: 8300000, guid: e78d3ec7d94fc441caee8f33d2b4a603, type: 3}
@@ -436,6 +440,10 @@ PrefabInstance:
       propertyPath: QCorrect
       value: 
       objectReference: {fileID: 8300000, guid: 456100640a7b799468dfa9b4241112c6, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: rockFall
+      value: 
+      objectReference: {fileID: 8300000, guid: f40e4242e56669b4fb9456ab769f49a1, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: clockTick
       value: 
