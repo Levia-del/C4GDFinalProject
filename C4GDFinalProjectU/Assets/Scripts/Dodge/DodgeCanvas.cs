@@ -31,12 +31,13 @@ public class DodgeCanvas : MonoBehaviour
         else if(lvl<6)
         {
             spawnDelay = 0.7f;
+            timeToSurvive =10f;
             enemySpeed = 12f;
         }
         else
         {
             spawnDelay = 0.5f;
-            timeToSurvive = 20f;
+            timeToSurvive = 12f;
             enemySpeed = 14f;
         }
         InvokeRepeating("spawnProjectile", 2, spawnDelay);
