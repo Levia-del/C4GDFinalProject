@@ -34,7 +34,7 @@ public class QuestionsCanvas : MonoBehaviour
         {"What state is Steve Harvey from?", new string[]{"West \nVirginia","New \nJersey"} },
         {"What do you love about Steve Harvey?", new string[]{"Mustache","Hair"} },
         {"Why are you here?", new string[]{"To suffer.", "To get the \nrating up!" } },
-        {"Why.", new string[]{"Is this \nthing broken?","..."} },
+        {"Why.", new string[]{"I should \n delete this.","..."} },
         {"What is the meaning of life?", new string[]{"To live","to die"} },
         {"What is a lexicon?", new string[]{"An Alphabet","An old \nbook"} },
         {"Error: question blocked", new string[]{"do not","report"} },
