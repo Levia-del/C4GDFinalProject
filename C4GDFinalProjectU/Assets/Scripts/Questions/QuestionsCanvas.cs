@@ -13,6 +13,7 @@ public class QuestionsCanvas : MonoBehaviour
     public TMP_Text LTXT;
     public TMP_Text RTXT;
     public GameObject QWrong, QRight;
+    public Image timerBar;
 
 
     private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
@@ -21,7 +22,7 @@ public class QuestionsCanvas : MonoBehaviour
     private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "Error: question blOcked"};
 
     private bool finished = false;
-    private float timer = 3.5f;
+    private float timer = 7f;
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {
@@ -109,6 +110,7 @@ public class QuestionsCanvas : MonoBehaviour
         if(timer>0)
         {
             timer -= Time.deltaTime;
+            timerBar.fillAmount = timer / 7f;
         }
         else
         {
