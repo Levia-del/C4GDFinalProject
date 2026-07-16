@@ -29,7 +29,7 @@ public class ButtonCanvas : MonoBehaviour
         originalScale = btn.transform.localScale;
 
         // Random wait duration between 3 and 15 seconds
-        waitTime = Random.Range(1f, 10f);
+        waitTime = Random.Range(1f, 8f);
 
         // Wire up button click
         btn.onClick.AddListener(OnButtonClicked);
