@@ -221,6 +221,9 @@ public class MainGameUI : MonoBehaviour
     {
         if(health<1)
         {
+            // Save score before destroying everything
+            if (LevelsManager.instance != null)
+                HighScore.SaveScore(LevelsManager.instance.levelNmbr);
             SceneManager.LoadScene("DeathScreen");
             Destroy(gameObject);
             Destroy(LevelsManager.instance.gameObject);
