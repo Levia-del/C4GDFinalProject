@@ -15,6 +15,8 @@ public class MainGameUI : MonoBehaviour
     public int health = 3;
     public TMP_Text NLTXT;
     public GameObject NLI;
+    public TMP_Text CLTXT;
+    public GameObject CLI;
 
     void Awake()
     {
@@ -28,7 +30,7 @@ public class MainGameUI : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-        void Start()
+    void Start()
     {
         
         curtn.SetActive(false);
@@ -246,10 +248,22 @@ public class MainGameUI : MonoBehaviour
         NLTXT.text = txt;
     }
 
+    public void setCLTXT(string txt)
+    {
+        CLTXT.text = txt;
+    }
+
     public void setNextVis(bool vis)
     {
        
         NLI.SetActive(vis);
         NLTXT.gameObject.SetActive(vis);
+    }
+
+    public void setCurrVis(bool vis)
+    {
+
+        CLI.SetActive(vis);
+        CLTXT.gameObject.SetActive(vis);
     }
 }

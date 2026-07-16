@@ -65,6 +65,7 @@ public class LevelsManager : MonoBehaviour
             MainGameUI.instance.Rcurtn.anchoredPosition = new Vector2(0, 0);
             MainGameUI.instance.curtn.SetActive(true);
             MainGameUI.instance.setNextVis(true);
+            MainGameUI.instance.setCurrVis(false);
             SceneManager.LoadScene(levels[nextLvl]);
             currLvl = nextLvl;
             nextLvl = generateRadnLvl();
@@ -83,6 +84,9 @@ public class LevelsManager : MonoBehaviour
         yield return new WaitForSeconds(.7f);
         SceneManager.LoadScene("Transition");
         MainGameUI.instance.setNextVis(false);
+        MainGameUI.instance.setCurrVis(true);
+        int a = levelNmbr + 1;
+        MainGameUI.instance.setCLTXT("Level "+a);
     }
     
 }
