@@ -136,7 +136,7 @@ public class MainGameUI : MonoBehaviour
             if (heart == null) yield break;
 
             float t = elapsed / duration;
-
+            AudioManager.instance.PlaySFX(AudioManager.instance.heartBreak, .2f);
             // Scale: quick burst then collapse
             float scaleT;
             if (t < 0.3f)

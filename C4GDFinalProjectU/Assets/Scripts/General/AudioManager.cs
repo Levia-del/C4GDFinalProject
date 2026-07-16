@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip crowdBoo;
     public AudioClip GeneralLose;
     public AudioClip GeneralWin;
+    public AudioClip heartBreak;
 
     void Awake()
     {
