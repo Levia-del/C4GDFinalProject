@@ -28,7 +28,7 @@ public class DodgeCanvas : MonoBehaviour
             spawnDelay = 1.2f;
             enemySpeed = 10f;
         }
-        else if(lvl<6)
+        else if(lvl<9)
         {
             spawnDelay = 0.7f;
             timeToSurvive =10f;

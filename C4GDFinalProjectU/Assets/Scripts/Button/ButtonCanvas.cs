@@ -55,8 +55,8 @@ public class ButtonCanvas : MonoBehaviour
                 btn.interactable = true;
                 isGo = true;
                 AudioManager.instance.PlaySFX(AudioManager.instance.BGo, 1.5f);
-                // Reaction window starts at 5s, decreases with level, minimum 1s
-                reactionTime = Mathf.Max(3f - (LevelsManager.instance.levelNmbr*0.5f), .5f);
+                // Reaction window starts at 5s, decreases slowly with level, minimum 1s
+                reactionTime = Mathf.Max(5f - (LevelsManager.instance.levelNmbr*0.35f), 1f);
 
                 // Start pulsating scale and color flash effects
                 StartVisualEffects();
