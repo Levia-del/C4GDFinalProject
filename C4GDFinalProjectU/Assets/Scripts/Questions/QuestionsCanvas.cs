@@ -21,7 +21,7 @@ public class QuestionsCanvas : MonoBehaviour
     private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "Error: question blOcked"};
 
     private bool finished = false;
-    private float timer = 5f;
+    private float timer = 3.5f;
 
     Dictionary<string, string[]> As = new Dictionary<string, string[]>()
     {

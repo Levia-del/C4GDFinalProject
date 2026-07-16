@@ -8,7 +8,8 @@ public class TransitionCanvas : MonoBehaviour
 {
     public LevelsManager LvlManager;
     public TMP_Text instTXT;
-    public float waitTime = 5f;
+    public float waitTime = 2f;
+    public RectTransform rcurtain;
 
     private float wait = 0.1f;
     // Start is called before the first frame update
@@ -30,15 +31,15 @@ public class TransitionCanvas : MonoBehaviour
             string mess="";
             if (LvlManager.nextLvl == 0)
             {
-                mess = "Answer fast with A-D or die!";
+                mess = "Answer fast or die!\n(A<->D)";
             }
             else if (LvlManager.nextLvl == 1)
             {
-                mess = "Dodge with A-D or die!";
+                mess = "Dodge or die!\n(A<->D)";
             }
             else if (LvlManager.nextLvl == 2)
             {
-                mess = "When I say GO! press the button";
+                mess = "When I say GO! press the button\n(SPACE)";
             }
             instTXT.text = mess;
         }

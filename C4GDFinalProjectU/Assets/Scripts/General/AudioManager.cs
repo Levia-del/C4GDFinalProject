@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -43,8 +44,7 @@ public class AudioManager : MonoBehaviour
         }
         themeAudioSource.loop = true;
         percussionAudioSource.loop = true;
-        PlayThemeMelody(.6f);
-        PlayThemePercussion(1f);
+
     }
 
     public void PlaySFX(AudioClip soundeffect, float volume)
@@ -80,12 +80,13 @@ public class AudioManager : MonoBehaviour
     {
         if (themeAudioSource.isPlaying)
         {
-            themeAudioSource.volume = volume;
+
+            themeAudioSource.DOFade(volume, .5f);
         }
         else
         {
             themeAudioSource.clip = mainTheme;
-            themeAudioSource.volume = volume;
+            themeAudioSource.DOFade(volume, .5f);
             themeAudioSource.Play();
         }
     }
@@ -94,12 +95,12 @@ public class AudioManager : MonoBehaviour
     {
         if (percussionAudioSource.isPlaying)
         {
-            percussionAudioSource.volume = volume;
+            percussionAudioSource.DOFade(volume, .5f);
         }
         else
         {
             percussionAudioSource.clip = percussion;
-            percussionAudioSource.volume = volume;
+            percussionAudioSource.DOFade(volume, .5f);
             percussionAudioSource.Play();
         }
         

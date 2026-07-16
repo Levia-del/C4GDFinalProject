@@ -76,6 +76,8 @@ public class ButtonCanvas : MonoBehaviour
                 finished = true;
               
                 txt.text = "Too Slow!";
+                AudioManager.instance.PlaySFX(AudioManager.instance.GeneralLose, 2f);
+                AudioManager.instance.PlaySFX(AudioManager.instance.crowdBoo, 1f);
                 btn.image.color = Color.white;
                 MainGameUI.instance.TakeDamage();
                 StartCoroutine(AdvanceAfterDelay());
@@ -173,6 +175,8 @@ public class ButtonCanvas : MonoBehaviour
             finished = true;
 
             txt.text = "Not Yet!";
+            AudioManager.instance.PlaySFX(AudioManager.instance.GeneralLose, 2f);
+            AudioManager.instance.PlaySFX(AudioManager.instance.crowdBoo, 1f);
             btn.image.color = Color.white;
             MainGameUI.instance.TakeDamage();
             StartCoroutine(AdvanceAfterDelay());
@@ -181,7 +185,8 @@ public class ButtonCanvas : MonoBehaviour
         {
             StopVisualEffects();
             finished = true;
-
+            AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, 1f);
+            AudioManager.instance.PlaySFX(AudioManager.instance.GeneralWin, 1f);
             txt.text = "Got it!";
             btn.image.color = Color.white;
             StartCoroutine(AdvanceAfterDelay());

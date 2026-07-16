@@ -70,7 +70,7 @@ public class LevelsManager : MonoBehaviour
             nextLvl = generateRadnLvl();
             levelNmbr++;
             MainGameUI.instance.setNLTXT("Next level is: \n"+levels[nextLvl]);
-            MainGameUI.instance.Rcurtn.DOMoveY(1600, 1f).OnComplete(() =>
+            MainGameUI.instance.Rcurtn.DOMoveY(1600, .7f).OnComplete(() =>
             {
                 MainGameUI.instance.curtn.SetActive(false);
                 
@@ -80,7 +80,7 @@ public class LevelsManager : MonoBehaviour
 
     IEnumerator TransitionWithCurtain()
     {
-        yield return new WaitForSeconds(1.9f);
+        yield return new WaitForSeconds(.7f);
         SceneManager.LoadScene("Transition");
         MainGameUI.instance.setNextVis(false);
     }

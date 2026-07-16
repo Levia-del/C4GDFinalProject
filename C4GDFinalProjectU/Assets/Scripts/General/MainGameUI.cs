@@ -36,7 +36,7 @@ public class MainGameUI : MonoBehaviour
 
 
 
-        
+        if (SceneManager.GetActiveScene().name == "StartScreen") return;
         for(int i = 0;i< hearts.Length;i++)
         {
             hearts[i].SetActive(false);
@@ -234,7 +234,7 @@ public class MainGameUI : MonoBehaviour
                 hearts[i].SetActive(true);
             }
             curtn.SetActive(true);
-            Rcurtn.DOMoveY(550, 2f).OnComplete(() =>
+            Rcurtn.DOMoveY(540, .7f).OnComplete(() =>
             {
                 //curtn.SetActive(false);
             });

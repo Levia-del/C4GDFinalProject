@@ -73,6 +73,8 @@ public class DodgeCanvas : MonoBehaviour
                 player.GetComponent<PlayerController>().lose = true;
                 player.transform.DOJump(fallTarget.transform.position, 5f, 1, .7f);
                 q = "Oh No. Deathhh!";
+                AudioManager.instance.PlaySFX(AudioManager.instance.GeneralLose, 2f);
+                AudioManager.instance.PlaySFX(AudioManager.instance.crowdBoo, 1f);
                 MainGameUI.instance.TakeDamage();
             }
             FTXT.text = q;
