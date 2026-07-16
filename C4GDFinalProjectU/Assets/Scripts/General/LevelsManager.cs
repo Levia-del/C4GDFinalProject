@@ -29,8 +29,8 @@ public class LevelsManager : MonoBehaviour
     void Start()
     {
         
-        currLvl = generateRadnLvl();
-        nextLvl = generateRadnLvl();
+        currLvl = 0;
+        nextLvl = 0;
     }
 
     // Update is called once per frame
@@ -68,7 +68,21 @@ public class LevelsManager : MonoBehaviour
             MainGameUI.instance.setCurrVis(false);
             SceneManager.LoadScene(levels[nextLvl]);
             currLvl = nextLvl;
-            nextLvl = generateRadnLvl();
+            
+            
+            if (levelNmbr == 0)
+            {
+                nextLvl = 1;
+            }
+            else if (levelNmbr == 1)
+            {
+                print("hello");
+                nextLvl = 2;
+            }
+            else
+            {
+                nextLvl = generateRadnLvl();
+            }
             levelNmbr++;
             MainGameUI.instance.setNLTXT("Next level is: \n"+levels[nextLvl]);
             MainGameUI.instance.Rcurtn.DOMoveY(1600, .7f).OnComplete(() =>
