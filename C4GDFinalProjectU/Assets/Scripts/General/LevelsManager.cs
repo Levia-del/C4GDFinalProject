@@ -95,7 +95,7 @@ public class LevelsManager : MonoBehaviour
 
     IEnumerator TransitionWithCurtain()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Transition");
         MainGameUI.instance.setNextVis(false);
         MainGameUI.instance.setCurrVis(true);
