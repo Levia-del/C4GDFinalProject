@@ -13,6 +13,8 @@ public class DeathCanvas : MonoBehaviour
     {
         btn.onClick.AddListener(Restart);
         btn.transform.position = new Vector3(btn.transform.position.x, -650, 0);
+        AudioManager.instance.PlaySFX(AudioManager.instance.deathScreen, 1f);
+        AudioManager.instance.PlayThemePercussion(0f);
         StartCoroutine(buttonApear());
     }
 

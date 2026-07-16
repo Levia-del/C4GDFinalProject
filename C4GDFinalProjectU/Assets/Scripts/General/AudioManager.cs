@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip GeneralLose;
     public AudioClip GeneralWin;
     public AudioClip heartBreak;
-
+    public AudioClip deathScreen;
     void Awake()
     {
         if (instance != null)
@@ -82,12 +82,12 @@ public class AudioManager : MonoBehaviour
         if (themeAudioSource.isPlaying)
         {
 
-            themeAudioSource.DOFade(volume, .5f);
+            themeAudioSource.DOFade(volume, .8f);
         }
         else
         {
             themeAudioSource.clip = mainTheme;
-            themeAudioSource.DOFade(volume, .5f);
+            themeAudioSource.DOFade(volume, .8f);
             themeAudioSource.Play();
         }
     }
@@ -96,12 +96,12 @@ public class AudioManager : MonoBehaviour
     {
         if (percussionAudioSource.isPlaying)
         {
-            percussionAudioSource.DOFade(volume, .5f);
+            percussionAudioSource.DOFade(volume, .8f);
         }
         else
         {
             percussionAudioSource.clip = percussion;
-            percussionAudioSource.DOFade(volume, .5f);
+            percussionAudioSource.DOFade(volume, .8f);
             percussionAudioSource.Play();
         }
         

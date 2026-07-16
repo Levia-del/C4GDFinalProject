@@ -647,6 +647,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 47c0b28b49164df44ab995dd2010eb56, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cc5576c9fb8b4ebfa203c658fe4b535, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: startButton
       value: 
       objectReference: {fileID: 8300000, guid: c809cb704ff1e994b9bbad9e43d63a7f, type: 3}
