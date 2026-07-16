@@ -453,6 +453,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 5438fffc639164652ab9a0e2c079b7ef, type: 3}
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: mainTheme
+      value: 
+      objectReference: {fileID: 8300000, guid: af9b47f7164146c4b8632ed2bfcf7e90, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: percussion
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d83995192468a849981c1f413132e59, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
+      propertyPath: GeneralLose
+      value: 
+      objectReference: {fileID: 8300000, guid: 47c0b28b49164df44ab995dd2010eb56, type: 3}
+    - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: startButton
       value: 
       objectReference: {fileID: 8300000, guid: 7b0ea0c4599a55c43810bd7de2453f44, type: 3}

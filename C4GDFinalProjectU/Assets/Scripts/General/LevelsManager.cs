@@ -55,12 +55,13 @@ public class LevelsManager : MonoBehaviour
         if (isTransition)
         {
             // Curtain close + transition handled in coroutine
-
+            AudioManager.instance.PlayThemeMelody(0f);
             MainGameUI.instance.newLevel();
             StartCoroutine(TransitionWithCurtain());
         }
         else
         {
+            AudioManager.instance.PlayThemeMelody(0.5f);
             MainGameUI.instance.Rcurtn.anchoredPosition = new Vector2(0, 0);
             MainGameUI.instance.curtn.SetActive(true);
             MainGameUI.instance.setNextVis(true);

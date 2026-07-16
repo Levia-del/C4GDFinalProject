@@ -6,7 +6,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     AudioSource audioSource;
+    AudioSource themeAudioSource;
+    AudioSource percussionAudioSource;
     public AudioClip mainTheme;
+    public AudioClip percussion;
     public AudioClip startButton;
     public AudioClip swoosh1;
     public AudioClip QCorrect;
@@ -35,7 +38,13 @@ public class AudioManager : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+            themeAudioSource = gameObject.AddComponent<AudioSource>();
+            percussionAudioSource = gameObject.AddComponent<AudioSource>();
         }
+        themeAudioSource.loop = true;
+        percussionAudioSource.loop = true;
+        PlayThemeMelody(.6f);
+        PlayThemePercussion(1f);
     }
 
     public void PlaySFX(AudioClip soundeffect, float volume)
@@ -65,5 +74,34 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         audioSource.Stop();
+    }
+
+    public void PlayThemeMelody(float volume)
+    {
+        if (themeAudioSource.isPlaying)
+        {
+            themeAudioSource.volume = volume;
+        }
+        else
+        {
+            themeAudioSource.clip = mainTheme;
+            themeAudioSource.volume = volume;
+            themeAudioSource.Play();
+        }
+    }
+
+    public void PlayThemePercussion(float volume)
+    {
+        if (percussionAudioSource.isPlaying)
+        {
+            percussionAudioSource.volume = volume;
+        }
+        else
+        {
+            percussionAudioSource.clip = percussion;
+            percussionAudioSource.volume = volume;
+            percussionAudioSource.Play();
+        }
+        
     }
 }
