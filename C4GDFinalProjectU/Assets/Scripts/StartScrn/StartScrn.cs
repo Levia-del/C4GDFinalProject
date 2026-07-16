@@ -29,10 +29,11 @@ public class StartScrn : MonoBehaviour
         isClicked = true;
         btn.interactable = false;
         
+        AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .5f);
         AudioManager.instance.PlayThemeMelody(0f);
         AudioManager.instance.PlayThemePercussion(.5f);
         AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .7f);
-        AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .5f);
+    
         LevelsManager.instance.LevelComplete(true);
     }
 

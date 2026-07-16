@@ -649,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 6402833271237505649, guid: 04b944b0f60a38643a91e30ced84cb5f, type: 3}
       propertyPath: startButton
       value: 
-      objectReference: {fileID: 8300000, guid: 7b0ea0c4599a55c43810bd7de2453f44, type: 3}
+      objectReference: {fileID: 8300000, guid: c809cb704ff1e994b9bbad9e43d63a7f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -914,8 +914,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: -5794305495318351716, guid: e60dd049ef02d4121910bcf8b993adf9, type: 3}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -5794305495318351716, guid: e60dd049ef02d4121910bcf8b993adf9, type: 3}
+    m_DisabledSprite: {fileID: -5794305495318351716, guid: e60dd049ef02d4121910bcf8b993adf9, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
