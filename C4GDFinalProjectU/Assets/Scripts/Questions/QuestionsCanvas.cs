@@ -141,15 +141,16 @@ public class QuestionsCanvas : MonoBehaviour
                 AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .5f);
                 QTXT.text = "Correct!";
                 Vector2 pos;
+                print(BTNR.transform.position.y);
                 if (isRightBTN)
                 {
-                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y+50);
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 0.4f);
                 }
                 else
                 {
-                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 50);
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 0.4f);
                 }
-                Instantiate(QRight, pos, QRight.transform.rotation, transform);
+                Instantiate(QRight, pos, QRight.transform.rotation,transform);
                 StartCoroutine(NxtLvl());
 
             }
@@ -169,11 +170,11 @@ public class QuestionsCanvas : MonoBehaviour
                 Vector2 pos;
                 if (isRightBTN)
                 {
-                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 15);
+                    pos = new Vector2(BTNR.transform.position.x, BTNR.transform.position.y + 0.05f);
                 }
                 else
                 {
-                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 15);
+                    pos = new Vector2(BTNL.transform.position.x, BTNL.transform.position.y + 0.05f);
                 }
                 Instantiate(QWrong, pos, QWrong.transform.rotation, transform);
                 MainGameUI.instance.TakeDamage();
