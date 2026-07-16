@@ -19,7 +19,7 @@ public class QuestionsCanvas : MonoBehaviour
     private string[] easyQs = {"Who is the best gameshow host?","What game are we playing?","What is your reward?","How do you win?"};
     private string[] mediumQs = {"What is the capital of Australia?", "What state is Steve Harvey from?", "What do you love about Steve Harvey?"};
 
-    private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "Error: question blOcked"};
+    private string[] hardQs = {"Why are you here?", "Why.", "What is the meaning of life?", "What is a lexicon?","Error: question blocked", "I'll be nice, choose true."};
 
     private bool finished = false;
     private float timer = 7f;
@@ -34,16 +34,16 @@ public class QuestionsCanvas : MonoBehaviour
         {"What state is Steve Harvey from?", new string[]{"West \nVirginia","New \nJersey"} },
         {"What do you love about Steve Harvey?", new string[]{"Mustache","Hair"} },
         {"Why are you here?", new string[]{"To suffer.", "To get the \nrating up!" } },
-        {"Why.", new string[]{"...","...."} },
-        {"What is the meaning of life?", new string[]{"To live","to Live"} },
-        {"What is a lexicon?", new string[]{"Alphabet","An old \nbook"} },
+        {"Why.", new string[]{"Is this \nthing broken?","..."} },
+        {"What is the meaning of life?", new string[]{"To live","to die"} },
+        {"What is a lexicon?", new string[]{"An Alphabet","An old \nbook"} },
         {"Error: question blocked", new string[]{"do not","report"} },
-        {"Error: question blOcked", new string[]{"report","do not"} },
         {"What is the Capital of Australia?", new string[]{"Canberra", "Queensland"} },
         {"What is your greatest desire?", new string[]{"More \nMinigames","Freedom"} },
         {"What is the capital of New York State?", new string[]{"New York \nCity","Syracuse"} },
         {"What is your Reward?", new string[]{"More \nMinigames","A Million \nDollars!"} },
-        {"Is this game gonna end?", new string[]{"Soon","Never will \n it"} }
+        {"I'll be nice, choose true.", new string[]{"True","False"} },
+        {"Is this game gonna end?", new string[]{"Yes","No"} }
     };
 
     Dictionary<string, bool> BoolAs = new Dictionary<string, bool>()
@@ -60,11 +60,11 @@ public class QuestionsCanvas : MonoBehaviour
         {"What is the meaning of life?", false},
         {"What is a lexicon?", false},
         {"Error: question blocked", true},
-        {"Error: question blOcked", false},
         {"What is the Capital of Australia?", false},
-        {"What is your greatest desire?", true},
+        {"What is your greatest desire?", false},
         {"What is the capital of New York State?", true},
         {"What is your Reward?", false},
+        {"I'll be nice, choose true.", false},
         {"Is this game gonna end?", true}        
     };
 
