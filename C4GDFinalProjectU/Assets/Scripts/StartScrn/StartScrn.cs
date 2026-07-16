@@ -8,7 +8,6 @@ using DG.Tweening;
 public class StartScrn : MonoBehaviour
 {
     public Button btn;
-    public RectTransform rcurtain;
     bool isClicked = false;
     // Start is called before the first frame update
     void Start()
@@ -26,20 +25,16 @@ public class StartScrn : MonoBehaviour
     {
         if (isClicked == true) return;
 
-        StartCoroutine(StartGame());
-        MainGameUI.instance.newLevel();
+        
         isClicked = true;
-        btn.GetComponent<Button>().interactable = false;
-    }
-
-    IEnumerator StartGame()
-    {
+        btn.interactable = false;
+        
         AudioManager.instance.PlayThemeMelody(0f);
         AudioManager.instance.PlayThemePercussion(1f);
         AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .7f);
         AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .5f);
-        rcurtain.DOMoveY(550, 1f);
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Transition");
+        LevelsManager.instance.LevelComplete(true);
     }
+
+    
 }

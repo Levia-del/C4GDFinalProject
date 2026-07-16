@@ -234,7 +234,7 @@ public class MainGameUI : MonoBehaviour
                 hearts[i].SetActive(true);
             }
             curtn.SetActive(true);
-            Rcurtn.DOMoveY(540, .7f).OnComplete(() =>
+            Rcurtn.DOMoveY(540, 1f).OnComplete(() =>
             {
                 //curtn.SetActive(false);
             });
