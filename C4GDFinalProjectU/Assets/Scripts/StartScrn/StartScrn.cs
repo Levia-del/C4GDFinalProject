@@ -30,7 +30,7 @@ public class StartScrn : MonoBehaviour
         btn.interactable = false;
         
         AudioManager.instance.PlayThemeMelody(0f);
-        AudioManager.instance.PlayThemePercussion(1f);
+        AudioManager.instance.PlayThemePercussion(.5f);
         AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .7f);
         AudioManager.instance.PlaySFX(AudioManager.instance.startButton, .5f);
         LevelsManager.instance.LevelComplete(true);

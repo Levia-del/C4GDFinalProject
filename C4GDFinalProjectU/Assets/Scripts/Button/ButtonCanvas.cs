@@ -186,7 +186,7 @@ public class ButtonCanvas : MonoBehaviour
             StopVisualEffects();
             finished = true;
             AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, 1f);
-            AudioManager.instance.PlaySFX(AudioManager.instance.GeneralWin, 1f);
+            AudioManager.instance.PlaySFX(AudioManager.instance.GeneralWin, .5f);
             txt.text = "Got it!";
             btn.image.color = Color.white;
             StartCoroutine(AdvanceAfterDelay());

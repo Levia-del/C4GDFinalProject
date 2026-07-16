@@ -65,7 +65,7 @@ public class DodgeCanvas : MonoBehaviour
             if (won)
             {
                 AudioManager.instance.PlaySFX(AudioManager.instance.Cheer, .5f);
-                AudioManager.instance.PlaySFX(AudioManager.instance.GeneralWin, 1f);
+                AudioManager.instance.PlaySFX(AudioManager.instance.GeneralWin, .5f);
                 q = "You Survived!";
             }
             else
