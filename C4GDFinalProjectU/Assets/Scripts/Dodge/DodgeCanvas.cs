@@ -61,6 +61,7 @@ public class DodgeCanvas : MonoBehaviour
         
         if (!finished)
         {
+            CancelInvoke(nameof(spawnProjectile));
             finished = true;
             string q = "";
             if (won)
