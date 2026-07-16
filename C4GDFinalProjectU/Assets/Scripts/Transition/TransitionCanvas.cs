@@ -16,7 +16,7 @@ public class TransitionCanvas : MonoBehaviour
     void Start()
     {
         LvlManager = LevelsManager.instance;
-        waitTime = Mathf.Max(5 - (LvlManager.levelNmbr / 2), 1f);
+        waitTime = Mathf.Max(3 - (LvlManager.levelNmbr / 2), .5f);
         
     }
 
